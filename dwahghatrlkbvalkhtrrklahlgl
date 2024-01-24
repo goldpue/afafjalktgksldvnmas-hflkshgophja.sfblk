@@ -74,6 +74,14 @@ print("nigga")
     return
 end
 
+getgenv().pos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+repeat wait()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Ignored.Shop["[Knife] - $159"].Head.CFrame * CFrame.new(0,-5,0)
+    fireclickdetector(game.Workspace.Ignored.Shop["[Knife] - $159"].ClickDetector)
+    wait(000000000000.1)
+until game.Players.LocalPlayer.Backpack:FindFirstChild("[Knife]")
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = getgenv().pos
+
 STAND = game:GetService('Players'):FindFirstChild(game:GetService('Players').LocalPlayer.Name)
 OWNER = game:GetService("Players"):FindFirstChild(StandOwner)
 rs = game:GetService("RunService")
