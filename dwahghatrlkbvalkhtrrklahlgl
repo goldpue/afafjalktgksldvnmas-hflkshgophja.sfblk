@@ -3633,7 +3633,7 @@ end)
 
 rs.Heartbeat:connect(function()
     if antis2 == true and KO(OWNER).Value == true then
-        getRoot(STAND).CFrame = CFrame.new(getTorso(OWNER).Position)*CFrame.new(0,-2,0)*CFrame.Angles(math.pi*0.5,0,0)
+        getRoot(STAND).CFrame = CFrame.new(getTorso(OWNER).Position)*CFrame.new(0,1.50,0)*CFrame.Angles(math.pi*0.0,0)
         local Vel = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
         if STAND.Character:FindFirstChild('[Knife]') then STAND.Character:FindFirstChild('[Knife]'):Activate() STAND.Character:FindFirstChild('[Knife]'):Deactivate() else STAND.Backpack:FindFirstChild('[Knife]').Parent = STAND.Character
         end
