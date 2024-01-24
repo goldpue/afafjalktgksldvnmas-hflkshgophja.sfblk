@@ -1619,6 +1619,19 @@ function foranti()
     end
 end
 
+Create("Fast!",function()
+game:GetService("RunService").heartbeat:Connect(function()
+        for _, v in next, game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):GetPlayingAnimationTracks() do
+            if (v.Animation.AnimationId:match("rbxassetid://4798175381")) then
+                local Vel = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
+                game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,8,0) * (50)
+                game:GetService("RunService").RenderStepped:Wait()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vel
+            end
+        end
+    end)
+end)
+
 Create("fling!",function()
     Stop()
     noclip = true
@@ -1632,7 +1645,7 @@ end)
         for _, v in next, game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):GetPlayingAnimationTracks() do
             if (v.Animation.AnimationId:match("rbxassetid://3033700364")) then
                 local Vel = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
-                game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,8,0) * (50)
+                game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,8,0) * (70)
                 game:GetService("RunService").RenderStepped:Wait()
                 game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vel
             end
