@@ -1619,6 +1619,27 @@ function foranti()
     end
 end
 
+Create("fling!",function()
+    Stop()
+    noclip = true
+    foranti()
+    follow = true
+    if Sounds == true then
+        play(8655611378,true,true) 
+    end
+end)
+    game:GetService("RunService").heartbeat:Connect(function()
+        for _, v in next, game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):GetPlayingAnimationTracks() do
+            if (v.Animation.AnimationId:match("rbxassetid://3033700364")) then
+                local Vel = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
+                game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,8,0) * (50)
+                game:GetService("RunService").RenderStepped:Wait()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vel
+            end
+        end
+    end)
+    
+
 Create("Drop!",function()
     if Sounds == true then
         play(8655611378,true,true) 
@@ -3633,7 +3654,7 @@ end)
 
 rs.Heartbeat:connect(function()
     if antis2 == true and KO(OWNER).Value == true then
-        getRoot(STAND).CFrame = CFrame.new(getTorso(OWNER).Position)*CFrame.new(0,1.55,0)*CFrame.Angles(math.pi*0.0,0)
+        getRoot(STAND).CFrame = CFrame.new(getTorso(OWNER).Position)*CFrame.new(0,-1.25,0)CFrame.Angles(math.pi*0,0,0)
         local Vel = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
         if STAND.Character:FindFirstChild('[Knife]') then STAND.Character:FindFirstChild('[Knife]'):Activate() STAND.Character:FindFirstChild('[Knife]'):Deactivate() else STAND.Backpack:FindFirstChild('[Knife]').Parent = STAND.Character
         end
