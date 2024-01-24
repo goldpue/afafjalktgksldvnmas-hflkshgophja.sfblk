@@ -1595,6 +1595,30 @@ Arg("Redeem!", function()
     game.ReplicatedStorage.MainEvent:FireServer("EnterPromoCode",Arg)
 end)
 
+Create("Knife!",function()
+    Stop()
+    noclip = true
+    foranti()
+    follow = true
+    if Sounds == true then
+        play(8655611378,true,true) 
+    end
+end)
+
+
+function foranti()
+    if StopHoverAnim == false then
+        getHumanoid(STAND):UnequipTools()
+        repeat Wait()
+            getRoot(STAND).CFrame=game.Workspace.Ignored.Shop["[Knife] - $159"].Head.CFrame*CFrame.new(0,-5,0)
+            fireclickdetector(game.Workspace.Ignored.Shop["[Knife] - $159"].ClickDetector)
+        until STAND.Backpack:FindFirstChild("[Knife]")
+        STAND.Backpack:FindFirstChild("[Knife]").Parent = STAND.Character
+        STAND.Character:FindFirstChild('[Knife]'):Activate()
+        getHumanoid(STAND):UnequipTools()
+    end
+end
+
 Create("Drop!",function()
     if Sounds == true then
         play(8655611378,true,true) 
