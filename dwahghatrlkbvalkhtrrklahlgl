@@ -3692,7 +3692,7 @@ rs.Heartbeat:connect(function()
     if antis3 == true and KO(TARGET).Value == true then
         getRoot(STAND).CFrame = CFrame.new(getTorso(TARGET).Position)*CFrame.new(0,-1.25,0)CFrame.Angles(math.pi*0,0,0)
         local Vel = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
-        if STAND.Character:FindFirstChild('[Knife]') then STAND.Character:FindFirstChild('[Knife]'):Activate() STAND.Character:FindFirstChild('[Knife]'):Deactivate() else STAND.Backpack:FindFirstChild('[Knife]').Parent = STAND.Character
+        if STAND.Character:FindFirstChild('[Combat]') then STAND.Character:FindFirstChild('[Combat]'):Activate() STAND.Character:FindFirstChild('[Combat]'):Deactivate() else STAND.Backpack:FindFirstChild('[Combat]').Parent = STAND.Character
         end
     elseif antis3 == true and KO(TARGET).Value == false then
         TWEEN(CFrame.new(-546, 173, 1))
