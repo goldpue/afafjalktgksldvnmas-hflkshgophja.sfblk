@@ -1645,7 +1645,7 @@ end)
         for _, v in next, game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):GetPlayingAnimationTracks() do
             if (v.Animation.AnimationId:match("rbxassetid://3033700364")) then
                 local Vel = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
-                game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,8,0) * (63)
+                game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,8,0) * (55.5)
                 game:GetService("RunService").RenderStepped:Wait()
                 game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vel
             end
@@ -2802,6 +2802,13 @@ Create("light!",function()
     Attack = "Light"
 end)
 
+CreateTargetAbility("anti!",function()
+    antis3 = true
+end)
+CreateTargetAbility("unanti!",function()
+    antis3 = false
+end)
+
 Create("Heavy!",function()
     if Sounds == true then
         play(8655611378,true,true) 
@@ -3224,7 +3231,7 @@ CreateTargetAbility("!anti",function()
 end)
 
 
-CreateTargetAbility("Bring!",function()
+CreateTargetAbility(":Bring",function()
     if TARGET then
         Bring(TARGET)
     end
@@ -3236,13 +3243,19 @@ CreateTargetAbility("View!",function()
     end
 end)
 
-CreateTargetAbility("fing!",function()
+CreateTargetAbility("Univew!",function()
+    if TARGET then
+        Viewing = false
+    end
+end)
+
+CreateTargetAbility(":Smite",function()
     if TARGET then
         SMITE = true
     end
 end)
 
-CreateTargetAbility("Knock!",function()
+CreateTargetAbility(":Knock",function()
     if TARGET then
         Stop()
         noclip = true
@@ -3258,7 +3271,7 @@ CreateTargetAbility("Knock2!",function()
     end
 end)
 
-CreateTargetAbility("bag!",function()
+CreateTargetAbility(":Bag",function()
     if TARGET then
         Stop()
         noclip = true
@@ -3281,7 +3294,7 @@ CreateTargetAbility("bag!",function()
     end
 end)
 
-CreateTargetAbility("stomp!",function()
+CreateTargetAbility(":Stomp",function()
     if TARGET then
         Stop()
         noclip = true
@@ -3296,7 +3309,7 @@ CreateTargetAbility("akill!",function()
     end
 end)
 
-CreateTargetAbility("autokill!",function()
+CreateTargetAbility(":Kill",function()
     if TARGET then
         Stop()
         noclip = true
@@ -3304,7 +3317,7 @@ CreateTargetAbility("autokill!",function()
     end
 end)
 
-CreateTargetAbility("Stab!",function()
+CreateTargetAbility(":Stab",function()
     if TARGET then
         Stop()
         noclip = true
@@ -3313,7 +3326,7 @@ CreateTargetAbility("Stab!",function()
     end
 end)
 
-CreateTargetAbility("Astab!",function()
+CreateTargetAbility(":Astab",function()
     if TARGET then
         Stop()
         noclip = true
@@ -3322,7 +3335,7 @@ CreateTargetAbility("Astab!",function()
     end
 end)
 
-CreateTargetAbility("KAnnoy!",function()
+CreateTargetAbility(":Kannoy",function()
     if TARGET then
         Stop()
         noclip = true
@@ -3331,7 +3344,7 @@ CreateTargetAbility("KAnnoy!",function()
     end
 end)
 
-CreateTargetAbility("Annoy!",function()
+CreateTargetAbility(":Annoy",function()
     if TARGET then
         Stop()
         noclip = true
@@ -3339,7 +3352,7 @@ CreateTargetAbility("Annoy!",function()
     end
 end)
 
-CreateTargetAbility("Frame!",function()
+CreateTargetAbility(":Frame",function()
     if TARGET then
         Stop()
         noclip = true
@@ -3667,11 +3680,22 @@ end)
 
 rs.Heartbeat:connect(function()
     if antis2 == true and KO(OWNER).Value == true then
-        getRoot(STAND).CFrame = CFrame.new(getTorso(OWNER).Position)*CFrame.new(0,-1.25,0)CFrame.Angles(math.pi*0,0,0)
+        getRoot(STAND).CFrame = CFrame.new(getTorso(OWNER).Position)*CFrame.new(0,-1.35,0)CFrame.Angles(math.pi*0,0,0)
         local Vel = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
         if STAND.Character:FindFirstChild('[Knife]') then STAND.Character:FindFirstChild('[Knife]'):Activate() STAND.Character:FindFirstChild('[Knife]'):Deactivate() else STAND.Backpack:FindFirstChild('[Knife]').Parent = STAND.Character
         end
     elseif antis2 == true and KO(OWNER).Value == false then
+        TWEEN(CFrame.new(-546, 173, 1))
+    end
+end)
+
+rs.Heartbeat:connect(function()
+    if antis3 == true and KO(TARGET).Value == true then
+        getRoot(STAND).CFrame = CFrame.new(getTorso(TARGET).Position)*CFrame.new(0,-1.35,0)CFrame.Angles(math.pi*0,0,0)
+        local Vel = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
+        if STAND.Character:FindFirstChild('[Knife]') then STAND.Character:FindFirstChild('[Knife]'):Activate() STAND.Character:FindFirstChild('[Knife]'):Deactivate() else STAND.Backpack:FindFirstChild('[Knife]').Parent = STAND.Character
+        end
+    elseif antis3 == true and KO(TARGET).Value == false then
         TWEEN(CFrame.new(-546, 173, 1))
     end
 end)
