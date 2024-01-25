@@ -1,4 +1,4 @@
-getgenv().Credit = 'Lol' --Dont change this.
+getgenv().Credit = '360' --Dont change this.
 
 getgenv().Owner = 'hatredframe' --Username of owners.
 
@@ -32,7 +32,7 @@ getgenv().Settings = {
     ['CustomSong'] = 8713037614 --Enter A Song ID And Say 'Song!'
 
 }
-if getgenv().Credit == 'Lol' then
+if getgenv().Credit == '360' then
 wait(0.1)
 if not game['Loaded'] or not game:GetService("Players").LocalPlayer then
     game['Loaded']:Wait();
