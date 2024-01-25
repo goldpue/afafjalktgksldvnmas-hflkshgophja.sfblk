@@ -4466,9 +4466,7 @@ end)
 rs.Stepped:connect(function()
     if Viewing == true then
         game.Workspace.Camera.CameraSubject = getHumanoid(TARGET)
-    else
-    if Viewing == false then
-        game.Workspace.Camera.CameraSubject = getHumanoid(OWNER)
+    end
 end)
 
 rs.Stepped:Connect(function()
