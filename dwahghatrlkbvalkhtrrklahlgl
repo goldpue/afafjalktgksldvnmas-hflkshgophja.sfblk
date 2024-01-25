@@ -3764,13 +3764,13 @@ rs.Heartbeat:connect(function()
 end)
 
 rs.Heartbeat:connect(function()
-    if KnifeAnnoy == true and KO(TARGET).Value == false then
+    if PitchAnnoy == true and KO(TARGET).Value == false then
         StopHoverAnim = true
         noclip = true
         Hit2()
         TargetPitch(TARGET)
     else
-        if KnifeAnnoy == true and KO(TARGET).Value == true then
+        if PitchAnnoy == true and KO(TARGET).Value == true then
             getRoot(STAND).CFrame = CFrame.new(getTorso(TARGET).Position)*CFrame.new(0,-4.5,0)*CFrame.Angles(math.pi*0.5,0,0)
             if STAND.Character:FindFirstChild('[Pitchfork]') then STAND.Character:FindFirstChild('[Pitchfork]'):Activate() STAND.Character:FindFirstChild('[Pitchfork]'):Deactivate() else STAND.Backpack:FindFirstChild('[Pitchfork]').Parent = STAND.Character end
         end
@@ -3986,7 +3986,7 @@ rs.Heartbeat:connect(function()
     end
 end)
 rs.Heartbeat:connect(function()
-    if knifenear == true then
+    if Pitchnear == true then
         StopHoverAnim = true
         follow = false
         noclip = true
@@ -3994,7 +3994,7 @@ rs.Heartbeat:connect(function()
         if TARGET then
             if KO(TARGET).Value == false then
                 TargetPitch(TARGET)
-                BuyPitch()
+                Hit2()
             end
         else
             follow = true
