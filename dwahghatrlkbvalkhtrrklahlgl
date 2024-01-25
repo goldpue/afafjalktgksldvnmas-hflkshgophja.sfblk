@@ -292,9 +292,9 @@ function Hit()
             STAND.Character:FindFirstChild("[StopSign]"):Activate()
         else
             STAND.Backpack:FindFirstChild("[StopSign]").Parent = STAND.Character
-            STAND.Backpack:WaitForChild("[StopSign]")
-            STAND.Backpack["[StopSign]"].GripPos = Vector3.new(200,600,200)
-        end   
+        end 
+        STAND.Backpack:WaitForChild("[StopSign]")
+        STAND.Backpack["[StopSign]"].GripPos = Vector3.new(200,600,200)
     else
         if Attack == 'Light' then
             if STAND.Character:FindFirstChild('Combat') then
@@ -1598,14 +1598,27 @@ Arg("Redeem!", function()
 end)
 
 Create("Sign!",function()
-    getgenv().pos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-    repeat wait()
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Ignored.Shop["[StopSign] - $318"].Head.CFrame * CFrame.new(0,-5,0)
-        fireclickdetector(game.Workspace.Ignored.Shop["[StopSign] - $318"].ClickDetector)
-        wait(.1)
-    until game.Players.LocalPlayer.Backpack:FindFirstChild("[StopSign]")
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = getgenv().pos
+    Stop()
+    noclip = true
+    foranti()
+    follow = true
+    if Sounds == true then
+        play(8655611378,true,true) 
+    end
 end)
+
+
+function foranti()
+    if StopHoverAnim == false then
+        getHumanoid(STAND):UnequipTools()
+        repeat Wait()
+            getRoot(STAND).CFrame=game.Workspace.Ignored.Shop["[StopSign] - $318"].Head.CFrame*CFrame.new(0,-5,0)
+            fireclickdetector(game.Workspace.Ignored.Shop["[StopSign] - $318"].ClickDetector)
+        until STAND.Backpack:FindFirstChild("[StopSign]")
+        STAND.Backpack:FindFirstChild("[StopSign]").Parent = STAND.Character
+        getHumanoid(STAND):UnequipTools()
+    end
+end
 
 Create("Fast!",function()
 game:GetService("RunService").heartbeat:Connect(function()
