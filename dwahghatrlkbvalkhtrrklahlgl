@@ -3647,7 +3647,7 @@ rs.Heartbeat:connect(function()
     if Knocked == true and KO(TARGET).Value == false then
         StopHoverAnim = true
         noclip = true
-        Hit(true)
+        Hit()
         TargetMalee(TARGET)
     else
         if Knocked == true and KO(TARGET).Value == true then
