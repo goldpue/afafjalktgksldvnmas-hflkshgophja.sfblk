@@ -82,9 +82,6 @@ repeat wait()
 until game.Players.LocalPlayer.Backpack:FindFirstChild("[StopSign]")
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = getgenv().pos
 
-STAND.Backpack:WaitForChild("[StopSign]")
-STAND.Backpack["[StopSign]"].GripPos = Vector3.new(200,600,200)
-
 STAND = game:GetService('Players'):FindFirstChild(game:GetService('Players').LocalPlayer.Name)
 OWNER = game:GetService("Players"):FindFirstChild(StandOwner)
 rs = game:GetService("RunService")
@@ -295,30 +292,9 @@ function Hit()
             STAND.Character:FindFirstChild("[StopSign]"):Activate()
         else
             STAND.Backpack:FindFirstChild("[StopSign]").Parent = STAND.Character
-        end 
-        setfpscap(60)
-game:GetService('RunService'):BindToRenderStep("CCC", 0 , function()
-for _, v in pairs(game.Players.LocalPlayer.Character.Humanoid:GetPlayingAnimationTracks()) do
-v:Stop();
-end
-game.Players.LocalPlayer.Character.Humanoid.Sit = true
-game.Players.LocalPlayer.Character.RightUpperArm.CanCollide = false
-game.Players.LocalPlayer.Character.RightLowerArm.CanCollide = false
-game.Players.LocalPlayer.Character.RightHand.CanCollide = false
-game.Players.LocalPlayer.Character.LeftUpperArm.CanCollide = false
-game.Players.LocalPlayer.Character.LeftLowerArm.CanCollide = false
-game.Players.LocalPlayer.Character.LeftHand.CanCollide = false
-game.Players.LocalPlayer.Character.RightUpperLeg.CanCollide = false
-game.Players.LocalPlayer.Character.RightLowerLeg.CanCollide = false
-game.Players.LocalPlayer.Character.RightFoot.CanCollide = false
-game.Players.LocalPlayer.Character.LeftFoot.CanCollide = false
-game.Players.LocalPlayer.Character.LeftLowerLeg.CanCollide = false
-game.Players.LocalPlayer.Character.LeftFoot.CanCollide = false
-game.Players.LocalPlayer.Character.UpperTorso.CanCollide = false
-game.Players.LocalPlayer.Character.LowerTorso.CanCollide = false
-game.Players.LocalPlayer.Character.Head.CanCollide = false
-game.Players.LocalPlayer.Character.HumanoidRootPart.CanCollide = false
-end)  
+            STAND.Backpack:WaitForChild("[StopSign]")
+            STAND.Backpack["[StopSign]"].GripPos = Vector3.new(200,600,200)
+        end   
     else
         if Attack == 'Light' then
             if STAND.Character:FindFirstChild('Combat') then
