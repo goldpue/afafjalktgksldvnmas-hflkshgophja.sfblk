@@ -13,7 +13,7 @@ getgenv().Settings = {
     ['GunPrediction'] = 0.3, --Prediction For Gun Kill
     ['AttackMode'] = 'Under', --[Sky | Under] If [Sky] The Stand Will Attack Infront Of Then And If [Under] The Stand Will Attack In Underground
     ['GunMode'] = 'Under', --[Sky | Under]  The Stand Will Shooting Just Like What In The Settings
-    ['Resolver'] = true, --[true | false] Turn On Or Off Resolver If Someone Using Anti Lock
+    ['Resolver'] = false, --[true | false] Turn On Or Off Resolver If Someone Using Anti Lock
     --// ! Misc ! \\--
     ['LowGraphics'] = true, --[true | false] Turns graphics down so your stand doesnt lag too much
     
@@ -210,7 +210,7 @@ end
 
 --local
 local SkyP = 0
-local UnderP = -6.8
+local UnderP = -5.6
 local delta = 0
 local duration = 0.7
 local StopHoverAnim = false
