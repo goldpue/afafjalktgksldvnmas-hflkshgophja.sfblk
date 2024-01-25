@@ -281,10 +281,10 @@ end
 
 function Hit()
     if Attack == 'Heavy' then
-        if STAND.Character:FindFirstChild('[StopSign]') then
-            STAND.Character:FindFirstChild('[StopSign]'):Activate()
+        if STAND.Character:FindFirstChild('[Pitchfork]') then
+            STAND.Character:FindFirstChild('[Pitchfork]'):Activate()
         else
-            STAND.Backpack:FindFirstChild('[StopSign]').Parent = STAND.Character
+            STAND.Backpack:FindFirstChild('[Pitchfork]').Parent = STAND.Character
         end   
     else
         if Attack == 'Light' then
@@ -300,10 +300,10 @@ end
 
 function KnifeHit()
     if Attack == 'Heavy' then
-        if STAND.Character:FindFirstChild('[Pitchfork]') then
-            STAND.Character:FindFirstChild('[Pitchfork]'):Activate()
+        if STAND.Character:FindFirstChild('[Knife]') then
+            STAND.Character:FindFirstChild('[Knife]'):Activate()
         else
-            STAND.Backpack:FindFirstChild('[Pitchfork]').Parent = STAND.Character
+            STAND.Backpack:FindFirstChild('[Knife]').Parent = STAND.Character
         end   
     else
         if Attack == 'Light' then
