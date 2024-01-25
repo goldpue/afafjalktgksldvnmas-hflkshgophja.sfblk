@@ -1635,7 +1635,6 @@ end)
 Create("fling!",function()
     Stop()
     noclip = true
-    blocking = true
     foranti()
     follow = true
     if Sounds == true then
@@ -1644,20 +1643,27 @@ Create("fling!",function()
 end)
 game:GetService("RunService").heartbeat:Connect(function()
     for _, v in next, game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):GetPlayingAnimationTracks() do
-        if (v.Animation.AnimationId:match("rbxassetid://2788309982"))
-        or (v.Animation.AnimationId:match("rbxassetid://2788309317"))
+        if (v.Animation.AnimationId:match("rbxassetid://2788315673"))
+        or (v.Animation.AnimationId:match("rbxassetid://2788316350"))
         or (v.Animation.AnimationId:match("rbxassetid://2788311138"))
-        or (v.Animation.AnimationId:match("rbxassetid://2788305271"))
+        or (v.Animation.AnimationId:match("rbxassetid://2788309317"))
+        or (v.Animation.AnimationId:match("rbxassetid://3354696735"))
+        or (v.Animation.AnimationId:match("rbxassetid://2788312709"))
+        or (v.Animation.AnimationId:match("rbxassetid://2788316350"))
+        or (v.Animation.AnimationId:match("rbxassetid://2788311138"))
+        or (v.Animation.AnimationId:match("rbxassetid://2788309317"))
+        or (v.Animation.AnimationId:match("rbxassetid://2788308661"))
         or (v.Animation.AnimationId:match("rbxassetid://2788290270"))
-        or (v.Animation.AnimationId:match("rbxassetid://2788308661")) then
+        or (v.Animation.AnimationId:match("rbxassetid://2968344043"))
+        or (v.Animation.AnimationId:match("rbxassetid://2788305271")) then
             local Vel = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
-            game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,8,0) * (70)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,8,0) * (80)
             game:GetService("RunService").RenderStepped:Wait()
             game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vel
         end
     end
 end)
-    
+
 Create("Drop!",function()
     if Sounds == true then
         play(8655611378,true,true) 
