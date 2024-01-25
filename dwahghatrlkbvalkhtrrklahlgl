@@ -281,10 +281,10 @@ end
 
 function Hit()
     if Attack == 'Heavy' then
-        if STAND.Character:FindFirstChild('Combat') then
-            STAND.Character:FindFirstChild('Combat'):Activate()
+        if STAND.Character:FindFirstChild('StopSign') then
+            STAND.Character:FindFirstChild('StopSign'):Activate()
         else
-            STAND.Backpack:FindFirstChild('Combat').Parent = STAND.Character
+            STAND.Backpack:FindFirstChild('StopSign').Parent = STAND.Character
         end   
     else
         if Attack == 'Light' then
@@ -549,7 +549,7 @@ function Bring(Target)
     game.Workspace.Camera.CameraSubject = getHumanoid(STAND)
     repeat rs.Stepped:Wait()
     if KO(TARGET).Value == false then
-    Hit2(true)
+    Hit(true)
     TargetMalee(Target)
     game.Workspace.Camera.CameraSubject = getRoot(TARGET)
     end
@@ -3835,7 +3835,7 @@ rs.Heartbeat:connect(function()
     if StompTarget == true and KO(TARGET).Value == false then
         StopHoverAnim = true
         noclip = true
-        Hit2()
+        Hit()
         TargetMalee(TARGET)
     else
         if StompTarget == true and KO(TARGET).Value == true then
@@ -3861,7 +3861,7 @@ rs.Heartbeat:connect(function()
     if Kills == true and KO(TARGET).Value == false then
         StopHoverAnim = true
         noclip = true
-        Hit2(true)
+        Hit(true)
         TargetMalee(TARGET)
     else
         if Kills == true and KO(TARGET).Value == true then
