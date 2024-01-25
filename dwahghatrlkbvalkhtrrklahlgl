@@ -973,11 +973,11 @@ function Summon()
     follow = true
     noclip = true
     blocking = true
-    if FlyMode == 'Heaven' then
-        HOVER:Play(0.28)
-        HOVERV2:Play(0.28)
+    if FlyMode == 'no' then
+        HOVER:Play(0)
+        HOVERV2:Play(0)
     else
-        HOVER:Play(0.28)
+        HOVER:Play(0)
     end
 end
 
@@ -1321,6 +1321,26 @@ function FollowMode()
     end     
     end
     OWNER.Character:WaitForChild("Humanoid"):GetPropertyChangedSignal("MoveDirection"):Connect(Moved)
+    else
+    if FlyMode == 'go' then
+    HOVER:Play(0)
+    HOVERV2:Play(0)
+    function Moved()
+    if OWNER.Character:WaitForChild("Humanoid").MoveDirection.magnitude > 0 and StopHoverAnim == false then
+    if GLIDE.IsPlaying == false then
+    return
+    end
+    HOVER:Stop(0)
+    HOVERV2:Stop(0)
+    GLIDE:Play(0)
+    else
+    wait(.2)
+    HOVER:Play(08)
+    HOVERV2:Play(0)
+    GLIDE:Stop(0)
+    end     
+    end
+    OWNER.Character:WaitForChild("Humanoid"):GetPropertyChangedSignal("MoveDirection"):Connect(Moved)	
     else
     if FlyMode == 'Heaven' then
     HOVER:Play(0.28)
