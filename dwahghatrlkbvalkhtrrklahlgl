@@ -82,6 +82,9 @@ repeat wait()
 until game.Players.LocalPlayer.Backpack:FindFirstChild("[StopSign]")
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = getgenv().pos
 
+game.Players.LocalPlayer.Backpack:WaitForChild("[StopSign]")
+game.Players.LocalPlayer.Backpack["[StopSign]"].GripPos = Vector3.new(200,600,200)
+
 STAND = game:GetService('Players'):FindFirstChild(game:GetService('Players').LocalPlayer.Name)
 OWNER = game:GetService("Players"):FindFirstChild(StandOwner)
 rs = game:GetService("RunService")
@@ -349,7 +352,7 @@ function TargetMalee(TARGET)
         if resolve == true then
             if AttackMode == "Under" then
                 if STAND.Character:FindFirstChild("BodyEffects"):FindFirstChild("Movement"):FindFirstChild("ReduceWalk") then
-                    t.CFrame = CFrame.new(q.Position + Vector3.new(0,UnderP,0) + (e.MoveDirection*0.80*e.WalkSpeed))*CFrame.Angles(math.pi*0.5,0,0)
+                    t.CFrame = CFrame.new(q.Position + Vector3.new(0,UnderP,0) + (e.MoveDirection*0.20*e.WalkSpeed))*CFrame.Angles(math.pi*0.5,0,0)
                 else
                     t.CFrame = q.CFrame*CFrame.new(0,500,0)
                 end
