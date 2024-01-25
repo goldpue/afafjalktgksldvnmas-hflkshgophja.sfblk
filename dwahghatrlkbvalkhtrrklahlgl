@@ -281,10 +281,10 @@ end
 
 function Hit()
     if Attack == 'Heavy' then
-        if STAND.Character:FindFirstChild('[Pitchfork]') then
-            STAND.Character:FindFirstChild('[Pitchfork]'):Activate()
+        if STAND.Character:FindFirstChild('[Bat]') then
+            STAND.Character:FindFirstChild('[Bat]'):Activate()
         else
-            STAND.Backpack:FindFirstChild('[Pitchfork]').Parent = STAND.Character
+            STAND.Backpack:FindFirstChild('[Bat]').Parent = STAND.Character
         end   
     else
         if Attack == 'Light' then
@@ -1145,6 +1145,15 @@ function BuyPitch()
         fireclickdetector(game.Workspace.Ignored.Shop['[Pitchfork] - $339'].ClickDetector)
     until STAND.Backpack:FindFirstChild("[Pitchfork]")
     STAND.Backpack:FindFirstChild('[Pitchfork]').Parent = STAND.Character
+end
+
+function BuyBat()
+    noclip = true
+    repeat Wait()
+        getRoot(STAND).CFrame = game.Workspace.Ignored.Shop['[Bat] - $292'].Head.CFrame*CFrame.new(0,-5,0)
+        fireclickdetector(game.Workspace.Ignored.Shop['[Bat] - $292'].ClickDetector)
+    until STAND.Backpack:FindFirstChild("[Bat]")
+    STAND.Backpack:FindFirstChild('[Bat]').Parent = STAND.Character
 end
 
 function BuyWeight()
@@ -2351,6 +2360,11 @@ end)
 Create('Pitch!',function()
     Stop()
     BuyPitch()
+end)
+
+Create('Bat!',function()
+    Stop()
+    BuyBat()
 end)
 
 Create('Dcash!',function()
