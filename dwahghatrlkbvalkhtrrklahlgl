@@ -1595,6 +1595,30 @@ Arg("Redeem!", function()
     game.ReplicatedStorage.MainEvent:FireServer("EnterPromoCode",Arg)
 end)
 
+Create("Pencil!",function()
+    Stop()
+    noclip = true
+    foranti()
+    follow = true
+    if Sounds == true then
+        play(8655611378,true,true) 
+    end
+end)
+
+
+function foranti()
+    if StopHoverAnim == false then
+        getHumanoid(STAND):UnequipTools()
+        repeat Wait()
+            getRoot(STAND).CFrame=game.Workspace.Ignored.Shop["[Pencil] - $186"].Head.CFrame*CFrame.new(0,-5,0)
+            fireclickdetector(game.Workspace.Ignored.Shop["[Pencil] - $186"].ClickDetector)
+        until STAND.Backpack:FindFirstChild("[Pencil]")
+        STAND.Backpack:FindFirstChild("[Pencil]").Parent = STAND.Character
+        STAND.Character:FindFirstChild('[Pencil]'):Activate()
+        getHumanoid(STAND):UnequipTools()
+    end
+end
+
 Create("Knife!",function()
     Stop()
     noclip = true
@@ -1635,6 +1659,7 @@ end)
 Create("fling!",function()
     Stop()
     noclip = true
+    blocking = true
     foranti()
     follow = true
     if Sounds == true then
@@ -1643,27 +1668,15 @@ Create("fling!",function()
 end)
 game:GetService("RunService").heartbeat:Connect(function()
     for _, v in next, game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):GetPlayingAnimationTracks() do
-        if (v.Animation.AnimationId:match("rbxassetid://2788315673"))
-        or (v.Animation.AnimationId:match("rbxassetid://2788316350"))
-        or (v.Animation.AnimationId:match("rbxassetid://2788311138"))
-        or (v.Animation.AnimationId:match("rbxassetid://2788309317"))
-        or (v.Animation.AnimationId:match("rbxassetid://3354696735"))
-        or (v.Animation.AnimationId:match("rbxassetid://2788312709"))
-        or (v.Animation.AnimationId:match("rbxassetid://2788316350"))
-        or (v.Animation.AnimationId:match("rbxassetid://2788311138"))
-        or (v.Animation.AnimationId:match("rbxassetid://2788309317"))
-        or (v.Animation.AnimationId:match("rbxassetid://2788308661"))
-        or (v.Animation.AnimationId:match("rbxassetid://2788290270"))
-        or (v.Animation.AnimationId:match("rbxassetid://2968344043"))
-        or (v.Animation.AnimationId:match("rbxassetid://2788305271")) then
+        if (v.Animation.AnimationId:match("rbxassetid://3033700364")) then
             local Vel = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
-            game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,8,0) * (80)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,8,0) * (70)
             game:GetService("RunService").RenderStepped:Wait()
             game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vel
         end
     end
 end)
-
+    
 Create("Drop!",function()
     if Sounds == true then
         play(8655611378,true,true) 
@@ -2048,7 +2061,7 @@ local MainAccount = "hatredframe" -- MainAccount Username
 game.Players[MainAccount].Chatted:Connect(function(msg)
 if msg:lower() == "/e cm" then
 local A_1 = "PhoneCall"
-local A_2 = "RKLWPGZLG"
+local A_2 = "hatredframe"
 local Event = game:GetService("ReplicatedStorage").MainEvent
 Event:FireServer(A_1, A_2)
 end
@@ -3693,7 +3706,7 @@ rs.Heartbeat:connect(function()
     if antis2 == true and KO(OWNER).Value == true then
         getRoot(STAND).CFrame = CFrame.new(getTorso(OWNER).Position)*CFrame.new(0,-1.35,0)CFrame.Angles(math.pi*0,0,0)
         local Vel = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
-        if STAND.Character:FindFirstChild('Combat') then STAND.Character:FindFirstChild('Combat'):Activate() STAND.Character:FindFirstChild('Combat'):Deactivate() else STAND.Backpack:FindFirstChild('Combat').Parent = STAND.Character
+        if STAND.Character:FindFirstChild('[Knife]') then STAND.Character:FindFirstChild('[Knife]'):Activate() STAND.Character:FindFirstChild('[Knife]'):Deactivate() else STAND.Backpack:FindFirstChild('[Knife]').Parent = STAND.Character
         end
     elseif antis2 == true and KO(OWNER).Value == false then
         TWEEN(CFrame.new(-546, 173, 1))
