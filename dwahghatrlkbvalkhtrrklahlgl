@@ -9,7 +9,7 @@ getgenv().Settings = {
     ['Attack'] = 'Heavy', --Heavy = Super Punch Light = Spam Punch [Heavy | Light]
     ['StandMode'] = 'Heaven', --[Star Platinum : OverHeaven | Star Platinum: The World | Star Platinum, Za Warudo! | TheWorld | Cmoon | King Crimson | Killer Queen | MIH | D4C]
     ['FlyMode'] = 'Heaven', --[Glide | Fly | Hover | Heaven]| gogo]
-    ['Prediction'] = 0, --Prediction For Attack Or Targetting
+    ['Prediction'] = 0.125951, --Prediction For Attack Or Targetting
     ['GunPrediction'] = 0.3, --Prediction For Gun Kill
     ['AttackMode'] = 'Under', --[Sky | Under] If [Sky] The Stand Will Attack Infront Of Then And If [Under] The Stand Will Attack In Underground
     ['GunMode'] = 'Under', --[Sky | Under]  The Stand Will Shooting Just Like What In The Settings
@@ -81,9 +81,6 @@ repeat wait()
     wait(.1)
 until game.Players.LocalPlayer.Backpack:FindFirstChild("[StopSign]")
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = getgenv().pos
-
-game.Players.LocalPlayer.Backpack:WaitForChild("[StopSign]")
-game.Players.LocalPlayer.Backpack["[StopSign]"].GripPos = Vector3.new(200,600,200)
 
 STAND = game:GetService('Players'):FindFirstChild(game:GetService('Players').LocalPlayer.Name)
 OWNER = game:GetService("Players"):FindFirstChild(StandOwner)
@@ -352,7 +349,7 @@ function TargetMalee(TARGET)
         if resolve == true then
             if AttackMode == "Under" then
                 if STAND.Character:FindFirstChild("BodyEffects"):FindFirstChild("Movement"):FindFirstChild("ReduceWalk") then
-                    t.CFrame = CFrame.new(q.Position + Vector3.new(0,UnderP,0) + (e.MoveDirection*0.20*e.WalkSpeed))*CFrame.Angles(math.pi*0.5,0,0)
+                    t.CFrame = CFrame.new(q.Position + Vector3.new(0,UnderP,0) + (e.MoveDirection*Prediction*e.WalkSpeed))*CFrame.Angles(math.pi*0.5,0,0)
                 else
                     t.CFrame = q.CFrame*CFrame.new(0,500,0)
                 end
