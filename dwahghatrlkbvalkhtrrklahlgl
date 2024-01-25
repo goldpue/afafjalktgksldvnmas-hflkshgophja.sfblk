@@ -9,7 +9,7 @@ getgenv().Settings = {
     ['Attack'] = 'Heavy', --Heavy = Super Punch Light = Spam Punch [Heavy | Light]
     ['StandMode'] = 'Heaven', --[Star Platinum : OverHeaven | Star Platinum: The World | Star Platinum, Za Warudo! | TheWorld | Cmoon | King Crimson | Killer Queen | MIH | D4C]
     ['FlyMode'] = 'Heaven', --[Glide | Fly | Hover | Heaven]| gogo]
-    ['Prediction'] = 0.18, --Prediction For Attack Or Targetting
+    ['Prediction'] = 0, --Prediction For Attack Or Targetting
     ['GunPrediction'] = 0.3, --Prediction For Gun Kill
     ['AttackMode'] = 'Under', --[Sky | Under] If [Sky] The Stand Will Attack Infront Of Then And If [Under] The Stand Will Attack In Underground
     ['GunMode'] = 'Under', --[Sky | Under]  The Stand Will Shooting Just Like What In The Settings
@@ -76,10 +76,10 @@ end
 
 getgenv().pos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 repeat wait()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Ignored.Shop["[Knife] - $159"].Head.CFrame * CFrame.new(0,-5,0)
-    fireclickdetector(game.Workspace.Ignored.Shop["[Knife] - $159"].ClickDetector)
-    wait(000000000000.1)
-until game.Players.LocalPlayer.Backpack:FindFirstChild("[Knife]")
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Ignored.Shop["[StopSign] - $318"].Head.CFrame * CFrame.new(0,-5,0)
+    fireclickdetector(game.Workspace.Ignored.Shop["[StopSign] - $318"].ClickDetector)
+    wait(.1)
+until game.Players.LocalPlayer.Backpack:FindFirstChild("[StopSign]")
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = getgenv().pos
 
 STAND = game:GetService('Players'):FindFirstChild(game:GetService('Players').LocalPlayer.Name)
@@ -288,10 +288,10 @@ end
 
 function Hit()
     if Attack == 'Heavy' then
-        if STAND.Character:FindFirstChild('Combat') then
-            STAND.Character:FindFirstChild('Combat'):Activate()
+        if STAND.Character:FindFirstChild("[StopSign]") then
+            STAND.Character:FindFirstChild("[StopSign]"):Activate()
         else
-            STAND.Backpack:FindFirstChild('Combat').Parent = STAND.Character
+            STAND.Backpack:FindFirstChild("[StopSign]").Parent = STAND.Character
         end   
     else
         if Attack == 'Light' then
