@@ -228,8 +228,8 @@ function Stop()
     circle = false
     Arrest = false
     Frame = false
-    knifenear = false
-    killnear = false
+    Pitchnear = false
+    Pitchnear = false
     Viewing = false
     barragepos = false
     barragepunch = false
@@ -245,13 +245,13 @@ function Stop()
     Strafe = false
     Locking = false
     ORA = false
-    Stab = false
+    PitchStab = false
     Line = false
     PitchStab = false
     AutoWeight = false
     Annoy = false
-    KnifeKills = false
-    KnifeAnnoy = false
+    PitchKills = false
+    PitchAnnoy = false
     autodrop = false
     lettucefarm = false
     AutoArmor = false
