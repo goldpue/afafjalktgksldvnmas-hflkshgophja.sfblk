@@ -281,10 +281,10 @@ end
 
 function Hit()
     if Attack == 'Heavy' then
-        if STAND.Character:FindFirstChild('StopSign') then
-            STAND.Character:FindFirstChild('StopSign'):Activate()
+        if STAND.Character:FindFirstChild('[Pitchfork]') then
+            STAND.Character:FindFirstChild('[Pitchfork]'):Activate()
         else
-            STAND.Backpack:FindFirstChild('StopSign').Parent = STAND.Character
+            STAND.Backpack:FindFirstChild('[Pitchfork]').Parent = STAND.Character
         end   
     else
         if Attack == 'Light' then
@@ -293,25 +293,6 @@ function Hit()
                 STAND.Character:FindFirstChild('Combat'):Deactivate()
             else
                 STAND.Backpack:FindFirstChild('Combat').Parent = STAND.Character
-            end  
-        end
-    end
-end
-
-function Hit2()
-    if Attack == 'Heavy' then
-        if STAND.Character:FindFirstChild('StopSign') then
-            STAND.Character:FindFirstChild('StopSign'):Activate()
-        else
-            STAND.Backpack:FindFirstChild('StopSign').Parent = STAND.Character
-        end   
-    else
-        if Attack == 'Light' then
-            if STAND.Character:FindFirstChild('StopSign') then
-                STAND.Character:FindFirstChild('StopSign'):Activate()
-                STAND.Character:FindFirstChild('StopSign'):Deactivate()
-            else
-                STAND.Backpack:FindFirstChild('StopSign').Parent = STAND.Character
             end  
         end
     end
@@ -1155,6 +1136,15 @@ function BuyKnife()
         fireclickdetector(game.Workspace.Ignored.Shop['[Knife] - $155'].ClickDetector)
     until STAND.Backpack:FindFirstChild("[Knife]")
     STAND.Backpack:FindFirstChild('[Knife]').Parent = STAND.Character
+end
+
+function BuyPitch()
+    noclip = true
+    repeat Wait()
+        getRoot(STAND).CFrame = game.Workspace.Ignored.Shop['[Pitchfork] - $339'].Head.CFrame*CFrame.new(0,-5,0)
+        fireclickdetector(game.Workspace.Ignored.Shop['[Pitchfork] - $339'].ClickDetector)
+    until STAND.Backpack:FindFirstChild("[Pitchfork]")
+    STAND.Backpack:FindFirstChild('[Pitchfork]').Parent = STAND.Character
 end
 
 function BuyWeight()
@@ -2356,6 +2346,11 @@ end)
 Create('Weight!',function()
     Stop()
     BuyWeight()
+end)
+
+Create('Pitch!',function()
+    Stop()
+    BuyPitch()
 end)
 
 Create('Dcash!',function()
