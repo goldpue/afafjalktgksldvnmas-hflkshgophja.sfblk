@@ -381,8 +381,6 @@ function TargetMalee(TARGET)
         end
         game.Workspace.Camera.CameraSubject = getHumanoid(TARGET)
     end
-    else
-        game.Workspace.Camera.CameraSubject = getHumanoid(OWNER)
 end
 
 function TargetKnife(TARGET)
