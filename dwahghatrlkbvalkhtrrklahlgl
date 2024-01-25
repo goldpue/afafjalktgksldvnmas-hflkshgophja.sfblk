@@ -1327,7 +1327,7 @@ function FollowMode()
     HOVERV2:Play(0)
     function Moved()
     if OWNER.Character:WaitForChild("Humanoid").MoveDirection.magnitude > 0 and StopHoverAnim == false then
-    if GLIDE.IsPlaying == false then
+    if GLIDE.IsPlaying == true then
     return
     end
     HOVER:Stop(0)
