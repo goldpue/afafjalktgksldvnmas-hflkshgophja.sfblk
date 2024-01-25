@@ -3369,7 +3369,7 @@ CreateTargetAbility("Stab!",function()
     if TARGET then
         Stop()
         noclip = true
-        BuyKnife()
+        BuyPitch()
         Stabbing = true
     end
 end)
@@ -3378,8 +3378,8 @@ CreateTargetAbility("Astab!",function()
     if TARGET then
         Stop()
         noclip = true
-        BuyKnife()
-        KnifeKills = true
+        BuyPitch()
+        PitchKills = true
     end
 end)
 
@@ -3387,8 +3387,8 @@ CreateTargetAbility("KAnnoy!",function()
     if TARGET then
         Stop()
         noclip = true
-        BuyKnife()
-        KnifeAnnoy = true
+        BuyPitch()
+        PitchAnnoy = true
     end
 end)
 
