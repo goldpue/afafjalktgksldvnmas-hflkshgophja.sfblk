@@ -4,12 +4,12 @@ getgenv().Owner = 'hatredframe' --Username of owners.
 
 getgenv().Settings = {
     --// ! Main ! \\--
-    ['Position'] = 'Back', --Position Of Stand [Back | Left | Right]
+    ['Position'] = 'Under', --Position Of Stand [Back | Left | Right]
     ['CrewID'] = 32570691, --Must Be In Group For It To Work
     ['Attack'] = 'Heavy', --Heavy = Super Punch Light = Spam Punch [Heavy | Light]
     ['StandMode'] = 'Heaven', --[Star Platinum : OverHeaven | Star Platinum: The World | Star Platinum, Za Warudo! | TheWorld | Cmoon | King Crimson | Killer Queen | MIH | D4C]
     ['FlyMode'] = 'Heaven', --[Glide | Fly | Hover | Heaven]| gogo]
-    ['Prediction'] = 0.3, --Prediction For Attack Or Targetting
+    ['Prediction'] = 0, --Prediction For Attack Or Targetting
     ['GunPrediction'] = 0.3, --Prediction For Gun Kill
     ['AttackMode'] = 'Under', --[Sky | Under] If [Sky] The Stand Will Attack Infront Of Then And If [Under] The Stand Will Attack In Underground
     ['GunMode'] = 'Under', --[Sky | Under]  The Stand Will Shooting Just Like What In The Settings
@@ -349,7 +349,7 @@ function TargetMalee(TARGET)
         if resolve == true then
             if AttackMode == "Under" then
                 if STAND.Character:FindFirstChild("BodyEffects"):FindFirstChild("Movement"):FindFirstChild("ReduceWalk") then
-                    t.CFrame = CFrame.new(q.Position + Vector3.new(0,UnderP,0) + (e.MoveDirection*Prediction*e.WalkSpeed))*CFrame.Angles(math.pi*0.5,0,0)
+                    t.CFrame = CFrame.new(q.Position + Vector3.new(0,UnderP,0) + (e.MoveDirection*0.80*e.WalkSpeed))*CFrame.Angles(math.pi*0.5,0,0)
                 else
                     t.CFrame = q.CFrame*CFrame.new(0,500,0)
                 end
