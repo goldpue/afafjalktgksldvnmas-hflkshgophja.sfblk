@@ -3291,7 +3291,7 @@ CreateTargetAbility(":Bring",function()
     end
 end)
 
-CreateTargetAbility(":View",function()
+CreateTargetAbility("View!",function()
     if TARGET then
         Viewing = true
     end
