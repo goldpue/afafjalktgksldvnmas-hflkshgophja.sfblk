@@ -298,7 +298,7 @@ function Hit()
     end
 end
 
-function BuyPitch()
+function Hit2()
     if Attack == 'Heavy' then
         if STAND.Character:FindFirstChild('[Pitchfork]') then
             STAND.Character:FindFirstChild('[Pitchfork]'):Activate()
@@ -376,7 +376,7 @@ function TargetMalee(TARGET)
     end
 end
 
-function TargetKnife(TARGET)
+function TargetPitch(TARGET)
     for _,v in ipairs(STAND.Character:WaitForChild("Humanoid"):GetPlayingAnimationTracks()) do v:Stop() end
     if game.Workspace.Vehicles:FindFirstChild(TARGET.Name) then
         getRoot(STAND).CFrame = CFrame.new(game.Workspace.Vehicles[TARGET.Name].Position)*CFrame.new(game.Workspace.Vehicles[TARGET.Name].Velocity*.4)*CFrame.new(0,0,0)
@@ -3645,7 +3645,7 @@ end)
 
 Create("Stab!",function()
     Stop()
-    BuyKnife()
+    BuyPitch()
     if Sounds == true then
         play(8655611378,true,true) 
     end
@@ -3767,12 +3767,12 @@ rs.Heartbeat:connect(function()
     if KnifeAnnoy == true and KO(TARGET).Value == false then
         StopHoverAnim = true
         noclip = true
-        KnifeHit()
-        TargetKnife(TARGET)
+        Hit2()
+        TargetPitch(TARGET)
     else
         if KnifeAnnoy == true and KO(TARGET).Value == true then
             getRoot(STAND).CFrame = CFrame.new(getTorso(TARGET).Position)*CFrame.new(0,-4.5,0)*CFrame.Angles(math.pi*0.5,0,0)
-            if STAND.Character:FindFirstChild('[Knife]') then STAND.Character:FindFirstChild('[Knife]'):Activate() STAND.Character:FindFirstChild('[Knife]'):Deactivate() else STAND.Backpack:FindFirstChild('[Knife]').Parent = STAND.Character end
+            if STAND.Character:FindFirstChild('[Pitchfork]') then STAND.Character:FindFirstChild('[Pitchfork]'):Activate() STAND.Character:FindFirstChild('[Pitchfork]'):Deactivate() else STAND.Backpack:FindFirstChild('[Pitchfork]').Parent = STAND.Character end
         end
     end
 end)
@@ -3793,24 +3793,10 @@ rs.Heartbeat:connect(function()
 end)
 
 rs.Heartbeat:connect(function()
-    if KnifeAnnoy == true and KO(TARGET).Value == false then
-        StopHoverAnim = true
-        noclip = true
-        BuyPitch()
-        TargetPitch(TARGET)
-    else
-        if KnifeAnnoy == true and KO(TARGET).Value == true then
-            getRoot(STAND).CFrame = CFrame.new(getTorso(TARGET).Position)*CFrame.new(0,-4.5,0)*CFrame.Angles(math.pi*0.5,0,0)
-            if STAND.Character:FindFirstChild('[Knife]') then STAND.Character:FindFirstChild('[Knife]'):Activate() STAND.Character:FindFirstChild('[Knife]'):Deactivate() else STAND.Backpack:FindFirstChild('[Knife]').Parent = STAND.Character end
-        end
-    end
-end)
-
-rs.Heartbeat:connect(function()
     if Stabbing == true and KO(TARGET).Value == false then
         StopHoverAnim = true
         noclip = true
-        BuyPitch()
+        Hit2()
         TargetPitch(TARGET)
     else
         if Stabbing == true and KO(TARGET).Value == true then
@@ -3820,13 +3806,13 @@ rs.Heartbeat:connect(function()
 end)
 
 rs.Heartbeat:connect(function()
-    if KnifeKills == true and KO(TARGET).Value == false then
+    if PitchKills == true and KO(TARGET).Value == false then
         StopHoverAnim = true
         noclip = true
-        BuyPitch()
+        Hit2()
         TargetPitch(TARGET)
     else
-        if KnifeKills == true and KO(TARGET).Value == true then
+        if PitchKills == true and KO(TARGET).Value == true then
             if Attacking(STAND).Value == true then
                 getRoot(STAND).CFrame = getRoot(TARGET).CFrame*CFrame.new(0,300,0)
             else
