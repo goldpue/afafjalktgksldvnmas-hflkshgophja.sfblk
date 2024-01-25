@@ -11,7 +11,7 @@ getgenv().LynixSettings = {
     ['FlyMode'] = 'Glide', --[Glide | Fly | Hover | Heaven]
     ['Prediction'] = 0.12595, --Prediction For Attack Or Targetting
     ['GunPrediction'] = 0.17, --Prediction For Gun Kill
-    ['AttackMode'] = 'Under', --[Sky | Under] If [Sky] The Stand Will Attack Infront Of Then And If [Under] The Stand Will Attack In Underground
+    ['AttackMode'] = 'Sky', --[Sky | Under] If [Sky] The Stand Will Attack Infront Of Then And If [Under] The Stand Will Attack In Underground
     ['Resolver'] = false, --[true | false] Turn On Or Off Resolver If Someone Using Anti Lock
     --// ! Misc ! \\--
     ['CustomSummon'] = 's', --Custom [Summon!] Text
