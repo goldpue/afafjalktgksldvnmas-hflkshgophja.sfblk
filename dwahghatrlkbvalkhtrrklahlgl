@@ -293,8 +293,6 @@ function Hit()
         else
             STAND.Backpack:FindFirstChild("[StopSign]").Parent = STAND.Character
         end 
-        STAND.Backpack:WaitForChild("[StopSign]")
-        STAND.Backpack["[StopSign]"].GripPos = Vector3.new(200,600,200)
     else
         if Attack == 'Light' then
             if STAND.Character:FindFirstChild('Combat') then
