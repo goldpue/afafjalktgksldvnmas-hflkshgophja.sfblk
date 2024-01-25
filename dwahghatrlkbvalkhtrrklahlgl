@@ -3637,7 +3637,7 @@ end)
 
 Create("Stab!",function()
     Stop()
-    BuyPitch()
+    Hit2()
     if Sounds == true then
         play(8655611378,true,true) 
     end
