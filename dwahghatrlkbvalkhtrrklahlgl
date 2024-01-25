@@ -3285,7 +3285,7 @@ CreateTargetAbility("unanti!",function()
     end
 end)
 
-CreateTargetAbility("Bring!",function()
+CreateTargetAbility(":Bring",function()
     if TARGET then
         Bring(TARGET)
     end
@@ -3297,13 +3297,13 @@ CreateTargetAbility("View!",function()
     end
 end)
 
-CreateTargetAbility("fing!",function()
+CreateTargetAbility(":Smite",function()
     if TARGET then
         SMITE = true
     end
 end)
 
-CreateTargetAbility("Knock!",function()
+CreateTargetAbility(":Knock",function()
     if TARGET then
         Stop()
         noclip = true
@@ -3311,7 +3311,7 @@ CreateTargetAbility("Knock!",function()
     end
 end)
 
-CreateTargetAbility("Knock2!",function()
+CreateTargetAbility(":Knock2",function()
     if TARGET then
         Stop()
         noclip = true
@@ -3319,7 +3319,7 @@ CreateTargetAbility("Knock2!",function()
     end
 end)
 
-CreateTargetAbility("bag!",function()
+CreateTargetAbility(":Bag",function()
     if TARGET then
         Stop()
         noclip = true
@@ -3342,14 +3342,14 @@ CreateTargetAbility("bag!",function()
     end
 end)
 
-CreateTargetAbility("stomp!",function()
+CreateTargetAbility(":Stomp",function()
     if TARGET then
         Stop()
         noclip = true
         StompTarget = true
     end
 end)
-CreateTargetAbility("akill!",function()
+CreateTargetAbility(":akill",function()
     if TARGET then
         Stop()
         noclip = true
@@ -3357,20 +3357,12 @@ CreateTargetAbility("akill!",function()
     end
 end)
 
-CreateTargetAbility("autokill!",function()
+CreateTargetAbility(":Stab",function()
     if TARGET then
         Stop()
         noclip = true
-        Kills = true
-    end
-end)
-
-CreateTargetAbility("Stab!",function()
-    if TARGET then
-        Stop()
-        noclip = true
-        BuyPitch()
-        Stabbing = true
+        Hit2()
+        PitchStab = true
     end
 end)
 
@@ -3378,7 +3370,7 @@ CreateTargetAbility("Astab!",function()
     if TARGET then
         Stop()
         noclip = true
-        BuyPitch()
+        Hit2()
         PitchKills = true
     end
 end)
@@ -3387,7 +3379,7 @@ CreateTargetAbility("KAnnoy!",function()
     if TARGET then
         Stop()
         noclip = true
-        BuyPitch()
+        Hit2()
         PitchAnnoy = true
     end
 end)
