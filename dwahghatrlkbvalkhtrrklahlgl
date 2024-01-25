@@ -3297,12 +3297,6 @@ CreateTargetAbility(":View",function()
     end
 end)
 
-CreateTargetAbility(":Unview",function()
-    if TARGET then
-        Viewing = false
-    end
-end)
-
 CreateTargetAbility(":Smite",function()
     if TARGET then
         SMITE = true
