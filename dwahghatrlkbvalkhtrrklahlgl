@@ -1,4 +1,4 @@
-getgenv().Credit = '360' --Dont change this.
+getgenv().Credit = 'Lol' --Dont change this.
 
 getgenv().Owner = 'hatredframe' --Username of owners.
 
@@ -32,7 +32,7 @@ getgenv().Settings = {
     ['CustomSong'] = 8713037614 --Enter A Song ID And Say 'Song!'
 
 }
-if getgenv().Credit == '360' then
+if getgenv().Credit == 'Lol' then
 wait(0.1)
 if not game['Loaded'] or not game:GetService("Players").LocalPlayer then
     game['Loaded']:Wait();
@@ -1635,28 +1635,23 @@ end)
 Create("fling!",function()
     Stop()
     noclip = true
+    blocking = true
     foranti()
     follow = true
     if Sounds == true then
         play(8655611378,true,true) 
     end
 end)
-
-game:GetService("RunService").heartbeat:Connect(function()
-    for _, v in next, game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):GetPlayingAnimationTracks() do
-        if (v.Animation.AnimationId:match("rbxassetid://2788309982")) then
-        or (v.Animation.AnimationId:match("rbxassetid://2788309317"))
-        or (v.Animation.AnimationId:match("rbxassetid://2788311138"))
-        or (v.Animation.AnimationId:match("rbxassetid://2788305271"))
-        or (v.Animation.AnimationId:match("rbxassetid://2788290270"))
-        or (v.Animation.AnimationId:match("rbxassetid://2788308661"))
-            local Vel = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
-            game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,8,0) * (70)
-            game:GetService("RunService").RenderStepped:Wait()
-            game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vel
+    game:GetService("RunService").heartbeat:Connect(function()
+        for _, v in next, game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):GetPlayingAnimationTracks() do
+            if (v.Animation.AnimationId:match("rbxassetid://2788354405")) then
+                local Vel = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
+                game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,8,0) * (70)
+                game:GetService("RunService").RenderStepped:Wait()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vel
+            end
         end
-    end
-end)
+    end)
     
 Create("Drop!",function()
     if Sounds == true then
@@ -3685,12 +3680,14 @@ end)
 
 rs.Heartbeat:connect(function()
     if antis2 == true and KO(OWNER).Value == true then
-        getRoot(STAND).CFrame = CFrame.new(getTorso(OWNER).Position)CFrame.new(0,-1.5,0)CFrame.Angles(math.pi*0,0,0)
+        getRoot(STAND).CFrame = CFrame.new(getTorso(OWNER).Position)*CFrame.new(0,-1.35,0)CFrame.Angles(math.pi*0,0,0)
+        local Vel = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
         if STAND.Character:FindFirstChild('Combat') then STAND.Character:FindFirstChild('Combat'):Activate() STAND.Character:FindFirstChild('Combat'):Deactivate() else STAND.Backpack:FindFirstChild('Combat').Parent = STAND.Character
         end
     elseif antis2 == true and KO(OWNER).Value == false then
         TWEEN(CFrame.new(-546, 173, 1))
-    end)
+    end
+end)
 
 rs.Heartbeat:connect(function()
     if antis3 == true and KO(TARGET).Value == true then
