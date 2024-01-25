@@ -13,7 +13,7 @@ getgenv().Settings = {
     ['GunPrediction'] = 0.3, --Prediction For Gun Kill
     ['AttackMode'] = 'Under', --[Sky | Under] If [Sky] The Stand Will Attack Infront Of Then And If [Under] The Stand Will Attack In Underground
     ['GunMode'] = 'Under', --[Sky | Under]  The Stand Will Shooting Just Like What In The Settings
-    ['Resolver'] = true, --[true | false] Turn On Or Off Resolver If Someone Using Anti Lock
+    ['Resolver'] = false, --[true | false] Turn On Or Off Resolver If Someone Using Anti Lock
     --// ! Misc ! \\--
     ['LowGraphics'] = true, --[true | false] Turns graphics down so your stand doesnt lag too much
     
@@ -76,10 +76,10 @@ end
 
 getgenv().pos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 repeat wait()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Ignored.Shop["[Knife] - $159"].Head.CFrame * CFrame.new(0,-5,0)
-    fireclickdetector(game.Workspace.Ignored.Shop["[Knife] - $159"].ClickDetector)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Ignored.Shop["[StopSign] - $318"].Head.CFrame * CFrame.new(0,-5,0)
+    fireclickdetector(game.Workspace.Ignored.Shop["[StopSign] - $318"].ClickDetector)
     wait(000000000000.1)
-until game.Players.LocalPlayer.Backpack:FindFirstChild("[Knife]")
+until game.Players.LocalPlayer.Backpack:FindFirstChild("[StopSign]")
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = getgenv().pos
 
 STAND = game:GetService('Players'):FindFirstChild(game:GetService('Players').LocalPlayer.Name)
@@ -210,7 +210,7 @@ end
 
 --local
 local SkyP = 0
-local UnderP = -6.8
+local UnderP = -5.8
 local delta = 0
 local duration = 0.7
 local StopHoverAnim = false
@@ -288,10 +288,10 @@ end
 
 function Hit()
     if Attack == 'Heavy' then
-        if STAND.Character:FindFirstChild('Combat') then
-            STAND.Character:FindFirstChild('Combat'):Activate()
+        if STAND.Character:FindFirstChild('StopSign') then
+            STAND.Character:FindFirstChild('StopSign'):Activate()
         else
-            STAND.Backpack:FindFirstChild('Combat').Parent = STAND.Character
+            STAND.Backpack:FindFirstChild('StopSign').Parent = STAND.Character
         end   
     else
         if Attack == 'Light' then
@@ -368,6 +368,7 @@ function TargetMalee(TARGET)
                     t.CFrame = CFrame.new(q.Position.X+(w.Velocity.X*Prediction),q.Position.Y+(w.Velocity.Y*0),q.Position.Z+(w.Velocity.Z*Prediction))*CFrame.new(0,UnderP,0)*CFrame.Angles(math.pi*0.5,0,0)
                 else
                     t.CFrame = q.CFrame*CFrame.new(0,500,0)
+                    game.Players.LocalPlayer.Character["[StopSign]"].Parent = game.Players.LocalPlayer.Backpack
                 end
             else
                 if AttackMode == "Sky" then
