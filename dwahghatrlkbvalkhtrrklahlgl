@@ -8,7 +8,7 @@ getgenv().Settings = {
     ['CrewID'] = 32570691, --Must Be In Group For It To Work
     ['Attack'] = 'Heavy', --Heavy = Super Punch Light = Spam Punch [Heavy | Light]
     ['StandMode'] = 'Heaven', --[Star Platinum : OverHeaven | Star Platinum: The World | Star Platinum, Za Warudo! | TheWorld | Cmoon | King Crimson | Killer Queen | MIH | D4C]
-    ['FlyMode'] = 'Heaven', --[Glide | Fly | Hover | Heaven]| gogo]
+    ['FlyMode'] = 'no', --[Glide | Fly | Hover | Heaven]| no]
     ['Prediction'] = 0.125951, --Prediction For Attack Or Targetting
     ['GunPrediction'] = 0.3, --Prediction For Gun Kill
     ['AttackMode'] = 'Under', --[Sky | Under] If [Sky] The Stand Will Attack Infront Of Then And If [Under] The Stand Will Attack In Underground
@@ -683,38 +683,38 @@ function ANIMATION()
 
     if not game:GetService("Workspace"):FindFirstChild("FLY") and
     not game:GetService("Workspace"):FindFirstChild("HOVER") and
-    not game:GetService("Workspace"):FindFirstChild("gogo") and 
+    not game:GetService("Workspace"):FindFirstChild("no") and 
     not game:GetService("Workspace"):FindFirstChild("HOVERV2") and 
     not game:GetService("Workspace"):FindFirstChild("HOVERV3") and 
     not game:GetService("Workspace"):FindFirstChild("GLIDE") then
         local Hover = Instance.new('Animation',game:GetService("Workspace"))
         local Glide = Instance.new('Animation',game:GetService("Workspace"))
         local Fly = Instance.new('Animation',game:GetService("Workspace"))
-        local gogo = Instance.new('Animation',game:GetService("Workspace"))
+        local no = Instance.new('Animation',game:GetService("Workspace"))
         local HoverV2 = Instance.new('Animation',game:GetService("Workspace"))
         local HoverV3 = Instance.new('Animation',game:GetService("Workspace"))
         Hover.AnimationId = 'rbxassetid://3541114300'
         Glide.AnimationId = 'rbxassetid://3084858603'
         Fly.AnimationId = 'rbxassetid://3541044388'
-        gogo.AnimationId = 'rbxassetid://4784557631'
+        no.AnimationId = 'rbxassetid://1'
         HoverV2.AnimationId = 'rbxassetid://13850634687'
         HoverV3.AnimationId = 'rbxassetid://13850660986'
         Hover.Name = "HOVER"
         Glide.Name = "GLIDE"
         Fly.Name = "FLY"
-        gogo.Name = "gogo"
+        no.Name = "no"
         HoverV2.Name = "HOVERV2"
         HoverV3.Name = "HOVERV3"
         GLIDE = getHumanoid(STAND):LoadAnimation(Glide)
         FLY = getHumanoid(STAND):LoadAnimation(Fly)
-        gogo = getHumanoid(STAND):LoadAnimation(gogo)
+        no = getHumanoid(STAND):LoadAnimation(no)
         HOVER = getHumanoid(STAND):LoadAnimation(Hover)
         HOVERV2 = getHumanoid(STAND):LoadAnimation(HoverV2)
         HOVERV3 = getHumanoid(STAND):LoadAnimation(HoverV3)
     else
         GLIDE = getHumanoid(STAND):LoadAnimation(game:GetService("Workspace").GLIDE)
         FLY = getHumanoid(STAND):LoadAnimation(game:GetService("Workspace").FLY)
-        gogo = getHumanoid(STAND):LoadAnimation(game:GetService("Workspace").gogo)
+        no = getHumanoid(STAND):LoadAnimation(game:GetService("Workspace").no)
         HOVER = getHumanoid(STAND):LoadAnimation(game:GetService("Workspace").HOVER)
         HOVERV2 = getHumanoid(STAND):LoadAnimation(game:GetService("Workspace").HOVERV2)
         HOVERV3 = getHumanoid(STAND):LoadAnimation(game:GetService("Workspace").HOVERV3)
