@@ -1641,6 +1641,7 @@ Create("fling!",function()
         play(8655611378,true,true) 
     end
 end)
+
 game:GetService("RunService").heartbeat:Connect(function()
     for _, v in next, game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):GetPlayingAnimationTracks() do
         if (v.Animation.AnimationId:match("rbxassetid://2788309982")) then
