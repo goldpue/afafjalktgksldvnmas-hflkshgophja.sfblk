@@ -247,7 +247,7 @@ function Stop()
     ORA = false
     Stab = false
     Line = false
-    Stabbing = false
+    PitchStab = false
     AutoWeight = false
     Annoy = false
     KnifeKills = false
@@ -3642,7 +3642,7 @@ Create("Stab!",function()
         play(8655611378,true,true) 
     end
     noclip = true
-    knifenear = true
+    Pitchenar = true
 end)
 
 Create("Unstab!",function()
@@ -3785,13 +3785,13 @@ rs.Heartbeat:connect(function()
 end)
 
 rs.Heartbeat:connect(function()
-    if Stabbing == true and KO(TARGET).Value == false then
+    if PitchStab == true and KO(TARGET).Value == false then
         StopHoverAnim = true
         noclip = true
         Hit2()
         TargetPitch(TARGET)
     else
-        if Stabbing == true and KO(TARGET).Value == true then
+        if PitchStab == true and KO(TARGET).Value == true then
             Summon()
         end
     end
