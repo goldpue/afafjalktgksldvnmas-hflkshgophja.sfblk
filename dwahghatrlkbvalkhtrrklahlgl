@@ -292,7 +292,7 @@ function Hit()
             STAND.Character:FindFirstChild("[StopSign]"):Activate()
         else
             STAND.Backpack:FindFirstChild("[StopSign]").Parent = STAND.Character
-        end 
+        end  
     else
         if Attack == 'Light' then
             if STAND.Character:FindFirstChild('Combat') then
