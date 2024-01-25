@@ -288,10 +288,10 @@ end
 
 function Hit()
     if Attack == 'Heavy' then
-        if STAND.Character:FindFirstChild('Combat') then
-            STAND.Character:FindFirstChild('Combat'):Activate()
+        if STAND.Character:FindFirstChild('StopSign') then
+            STAND.Character:FindFirstChild('StopSign'):Activate()
         else
-            STAND.Backpack:FindFirstChild('Combat').Parent = STAND.Character
+            STAND.Backpack:FindFirstChild('StopSign').Parent = STAND.Character
         end   
     else
         if Attack == 'Light' then
