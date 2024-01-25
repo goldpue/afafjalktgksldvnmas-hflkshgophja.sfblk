@@ -338,6 +338,27 @@ function Reset()
 end
 
 function TargetMalee(TARGET)
+    for _, v in pairs(game.Players.LocalPlayer.Character.Humanoid:GetPlayingAnimationTracks()) do
+        v:Stop();
+        end
+        game.Players.LocalPlayer.Character.Humanoid.Sit = true
+        game.Players.LocalPlayer.Character.RightUpperArm.CanCollide = false
+        game.Players.LocalPlayer.Character.RightLowerArm.CanCollide = false
+        game.Players.LocalPlayer.Character.RightHand.CanCollide = false
+        game.Players.LocalPlayer.Character.LeftUpperArm.CanCollide = false
+        game.Players.LocalPlayer.Character.LeftLowerArm.CanCollide = false
+        game.Players.LocalPlayer.Character.LeftHand.CanCollide = false
+        game.Players.LocalPlayer.Character.RightUpperLeg.CanCollide = false
+        game.Players.LocalPlayer.Character.RightLowerLeg.CanCollide = false
+        game.Players.LocalPlayer.Character.RightFoot.CanCollide = false
+        game.Players.LocalPlayer.Character.LeftFoot.CanCollide = false
+        game.Players.LocalPlayer.Character.LeftLowerLeg.CanCollide = false
+        game.Players.LocalPlayer.Character.LeftFoot.CanCollide = false
+        game.Players.LocalPlayer.Character.UpperTorso.CanCollide = false
+        game.Players.LocalPlayer.Character.LowerTorso.CanCollide = false
+        game.Players.LocalPlayer.Character.Head.CanCollide = false
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CanCollide = false
+        end
     q = getRoot(TARGET)
     w = TARGET.Character:FindFirstChild('Head')
     e = getHumanoid(TARGET)
