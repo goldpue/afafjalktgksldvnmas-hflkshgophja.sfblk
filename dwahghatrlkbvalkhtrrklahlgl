@@ -1645,7 +1645,6 @@ end)
 Create("fling!",function()
     Stop()
     noclip = true
-    blocking = true
     foranti()
     follow = true
     if Sounds == true then
