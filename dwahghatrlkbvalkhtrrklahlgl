@@ -9,9 +9,9 @@ getgenv().Settings = {
     ['Attack'] = 'Heavy', --Heavy = Super Punch Light = Spam Punch [Heavy | Light]
     ['StandMode'] = 'Heaven', --[Star Platinum : OverHeaven | Star Platinum: The World | Star Platinum, Za Warudo! | TheWorld | Cmoon | King Crimson | Killer Queen | MIH | D4C]
     ['FlyMode'] = 'Heaven', --[Glide | Fly | Hover | Heaven]| gogo]
-    ['Prediction'] = 0.27, --Prediction For Attack Or Targetting
+    ['Prediction'] = 0.3, --Prediction For Attack Or Targetting
     ['GunPrediction'] = 0.3, --Prediction For Gun Kill
-    ['AttackMode'] = 'Under', --[Sky | Under] If [Sky] The Stand Will Attack Infront Of Then And If [Under] The Stand Will Attack In Underground
+    ['AttackMode'] = 'Sky', --[Sky | Under] If [Sky] The Stand Will Attack Infront Of Then And If [Under] The Stand Will Attack In Underground
     ['GunMode'] = 'Under', --[Sky | Under]  The Stand Will Shooting Just Like What In The Settings
     ['Resolver'] = true, --[true | false] Turn On Or Off Resolver If Someone Using Anti Lock
     --// ! Misc ! \\--
@@ -1644,7 +1644,7 @@ Create("fling!",function()
 end)
     game:GetService("RunService").heartbeat:Connect(function()
         for _, v in next, game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):GetPlayingAnimationTracks() do
-            if (v.Animation.AnimationId:match("rbxassetid://2953512033")) then
+            if (v.Animation.AnimationId:match("rbxassetid://2788354405")) then
                 local Vel = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
                 game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,8,0) * (70)
                 game:GetService("RunService").RenderStepped:Wait()
@@ -2033,7 +2033,7 @@ gmt.__namecall =
         end)
 
 -- Chat Connect --
-local MainAccount = "RKLWPGZLG" -- MainAccount Username
+local MainAccount = "hatredframe" -- MainAccount Username
 game.Players[MainAccount].Chatted:Connect(function(msg)
 if msg:lower() == "/e cm" then
 local A_1 = "PhoneCall"
