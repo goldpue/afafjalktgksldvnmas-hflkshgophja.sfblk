@@ -3291,9 +3291,15 @@ CreateTargetAbility(":Bring",function()
     end
 end)
 
-CreateTargetAbility("View!",function()
+CreateTargetAbility(":View",function()
     if TARGET then
         Viewing = true
+    end
+end)
+
+CreateTargetAbility(":Unview",function()
+    if TARGET then
+        Viewing = false
     end
 end)
 
@@ -3375,7 +3381,7 @@ CreateTargetAbility(":Astab",function()
     end
 end)
 
-CreateTargetAbility("KAnnoy!",function()
+CreateTargetAbility(":Kannoy",function()
     if TARGET then
         Stop()
         noclip = true
@@ -3384,7 +3390,7 @@ CreateTargetAbility("KAnnoy!",function()
     end
 end)
 
-CreateTargetAbility("Annoy!",function()
+CreateTargetAbility(":Annoy",function()
     if TARGET then
         Stop()
         noclip = true
@@ -3392,7 +3398,7 @@ CreateTargetAbility("Annoy!",function()
     end
 end)
 
-CreateTargetAbility("Frame!",function()
+CreateTargetAbility(":Frame",function()
     if TARGET then
         Stop()
         noclip = true
@@ -3400,7 +3406,7 @@ CreateTargetAbility("Frame!",function()
     end
 end)
 
-CreateTargetAbility("Arrest!",function()
+CreateTargetAbility(":Arrest",function()
     if TARGET then
         if STAND.DataFolder:FindFirstChild("Officer").Value == 1 then
             Stop()
@@ -3801,7 +3807,7 @@ rs.Heartbeat:connect(function()
     if PitchKills == true and KO(TARGET).Value == false then
         StopHoverAnim = true
         noclip = true
-        Hit2()
+        Hit2(true)
         TargetPitch(TARGET)
     else
         if PitchKills == true and KO(TARGET).Value == true then
@@ -4460,7 +4466,9 @@ end)
 rs.Stepped:connect(function()
     if Viewing == true then
         game.Workspace.Camera.CameraSubject = getHumanoid(TARGET)
-    end
+    else
+    if Viewing == false then
+        game.Workspace.Camera.CameraSubject = getHumanoid(OWNER)
 end)
 
 rs.Stepped:Connect(function()
