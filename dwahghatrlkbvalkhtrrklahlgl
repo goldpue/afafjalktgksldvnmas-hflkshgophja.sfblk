@@ -9,9 +9,9 @@ getgenv().Settings = {
     ['Attack'] = 'Heavy', --Heavy = Super Punch Light = Spam Punch [Heavy | Light]
     ['StandMode'] = 'Heaven', --[Star Platinum : OverHeaven | Star Platinum: The World | Star Platinum, Za Warudo! | TheWorld | Cmoon | King Crimson | Killer Queen | MIH | D4C]
     ['FlyMode'] = 'Heaven', --[Glide | Fly | Hover | Heaven]| gogo]
-    ['Prediction'] = 0.3, --Prediction For Attack Or Targetting
+    ['Prediction'] = 0.27, --Prediction For Attack Or Targetting
     ['GunPrediction'] = 0.3, --Prediction For Gun Kill
-    ['AttackMode'] = 'Sky', --[Sky | Under] If [Sky] The Stand Will Attack Infront Of Then And If [Under] The Stand Will Attack In Underground
+    ['AttackMode'] = 'Under', --[Sky | Under] If [Sky] The Stand Will Attack Infront Of Then And If [Under] The Stand Will Attack In Underground
     ['GunMode'] = 'Under', --[Sky | Under]  The Stand Will Shooting Just Like What In The Settings
     ['Resolver'] = true, --[true | false] Turn On Or Off Resolver If Someone Using Anti Lock
     --// ! Misc ! \\--
@@ -1635,6 +1635,7 @@ end)
 Create("fling!",function()
     Stop()
     noclip = true
+    blocking = true
     foranti()
     follow = true
     if Sounds == true then
@@ -1643,7 +1644,7 @@ Create("fling!",function()
 end)
     game:GetService("RunService").heartbeat:Connect(function()
         for _, v in next, game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):GetPlayingAnimationTracks() do
-            if (v.Animation.AnimationId:match("rbxassetid://3033700364")) then
+            if (v.Animation.AnimationId:match("rbxassetid://2953512033")) then
                 local Vel = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
                 game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,8,0) * (70)
                 game:GetService("RunService").RenderStepped:Wait()
@@ -3681,7 +3682,7 @@ rs.Heartbeat:connect(function()
     if antis2 == true and KO(OWNER).Value == true then
         getRoot(STAND).CFrame = CFrame.new(getTorso(OWNER).Position)*CFrame.new(0,-1.35,0)CFrame.Angles(math.pi*0,0,0)
         local Vel = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
-        if STAND.Character:FindFirstChild('[Knife]') then STAND.Character:FindFirstChild('[Knife]'):Activate() STAND.Character:FindFirstChild('[Knife]'):Deactivate() else STAND.Backpack:FindFirstChild('[Knife]').Parent = STAND.Character
+        if STAND.Character:FindFirstChild('Block') then STAND.Character:FindFirstChild('Block]'):Activate() STAND.Character:FindFirstChild('Block'):Deactivate() else STAND.Backpack:FindFirstChild('Block').Parent = STAND.Character
         end
     elseif antis2 == true and KO(OWNER).Value == false then
         TWEEN(CFrame.new(-546, 173, 1))
