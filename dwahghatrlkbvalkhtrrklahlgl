@@ -1610,11 +1610,11 @@ function foranti()
     if StopHoverAnim == false then
         getHumanoid(STAND):UnequipTools()
         repeat Wait()
-            getRoot(STAND).CFrame=game.Workspace.Ignored.Shop["[Pencil] - $186"].Head.CFrame*CFrame.new(0,-5,0)
-            fireclickdetector(game.Workspace.Ignored.Shop["[Pencil] - $186"].ClickDetector)
-        until STAND.Backpack:FindFirstChild("[Pencil]")
-        STAND.Backpack:FindFirstChild("[Pencil]").Parent = STAND.Character
-        STAND.Character:FindFirstChild('[Pencil]'):Activate()
+            getRoot(STAND).CFrame=game.Workspace.Ignored.Shop["Pencil - $186"].Head.CFrame*CFrame.new(0,-5,0)
+            fireclickdetector(game.Workspace.Ignored.Shop["Pencil - $186"].ClickDetector)
+        until STAND.Backpack:FindFirstChild("Pencil")
+        STAND.Backpack:FindFirstChild("Pencil").Parent = STAND.Character
+        STAND.Character:FindFirstChild('Pencil'):Activate()
         getHumanoid(STAND):UnequipTools()
     end
 end
