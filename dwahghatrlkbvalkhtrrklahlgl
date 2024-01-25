@@ -1595,7 +1595,7 @@ Arg("Redeem!", function()
     game.ReplicatedStorage.MainEvent:FireServer("EnterPromoCode",Arg)
 end)
 
-Create("Knife!",function()
+Create("Sign!",function()
     Stop()
     noclip = true
     foranti()
@@ -1610,11 +1610,11 @@ function foranti()
     if StopHoverAnim == false then
         getHumanoid(STAND):UnequipTools()
         repeat Wait()
-            getRoot(STAND).CFrame=game.Workspace.Ignored.Shop["[Knife] - $159"].Head.CFrame*CFrame.new(0,-5,0)
-            fireclickdetector(game.Workspace.Ignored.Shop["[Knife] - $159"].ClickDetector)
-        until STAND.Backpack:FindFirstChild("[Knife]")
-        STAND.Backpack:FindFirstChild("[Knife]").Parent = STAND.Character
-        STAND.Character:FindFirstChild('[Knife]'):Activate()
+            getRoot(STAND).CFrame=game.Workspace.Ignored.Shop["[StopSign] - $318"].Head.CFrame*CFrame.new(0,-5,0)
+            fireclickdetector(game.Workspace.Ignored.Shop["[StopSign] - $318"].ClickDetector)
+        until STAND.Backpack:FindFirstChild("[StopSign]")
+        STAND.Backpack:FindFirstChild("[StopSign]").Parent = STAND.Character
+        STAND.Character:FindFirstChild('[StopSign]'):Activate()
         getHumanoid(STAND):UnequipTools()
     end
 end
