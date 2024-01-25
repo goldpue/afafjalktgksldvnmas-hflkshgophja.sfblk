@@ -3366,7 +3366,7 @@ CreateTargetAbility(":Stab",function()
     end
 end)
 
-CreateTargetAbility("Astab!",function()
+CreateTargetAbility(":Astab",function()
     if TARGET then
         Stop()
         noclip = true
@@ -3812,6 +3812,7 @@ rs.Heartbeat:connect(function()
                 game.ReplicatedStorage.MainEvent:FireServer("Stomp")
                 if Dead(TARGET).Value == true then
                     getRoot(STAND).CFrame = CFrame.new(getRoot(TARGET).Position)*CFrame.new(0,300,0)
+                        Summon()
                 end
             end
         end
