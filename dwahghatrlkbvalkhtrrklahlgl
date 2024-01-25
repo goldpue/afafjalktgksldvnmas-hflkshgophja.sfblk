@@ -298,12 +298,12 @@ function Hit()
     end
 end
 
-function KnifeHit()
+function BuyPitch()
     if Attack == 'Heavy' then
-        if STAND.Character:FindFirstChild('[Knife]') then
-            STAND.Character:FindFirstChild('[Knife]'):Activate()
+        if STAND.Character:FindFirstChild('[Pitchfork]') then
+            STAND.Character:FindFirstChild('[Pitchfork]'):Activate()
         else
-            STAND.Backpack:FindFirstChild('[Knife]').Parent = STAND.Character
+            STAND.Backpack:FindFirstChild('[Pitchfork]').Parent = STAND.Character
         end   
     else
         if Attack == 'Light' then
@@ -3796,8 +3796,8 @@ rs.Heartbeat:connect(function()
     if KnifeAnnoy == true and KO(TARGET).Value == false then
         StopHoverAnim = true
         noclip = true
-        KnifeHit()
-        TargetKnife(TARGET)
+        BuyPitch()
+        TargetPitch(TARGET)
     else
         if KnifeAnnoy == true and KO(TARGET).Value == true then
             getRoot(STAND).CFrame = CFrame.new(getTorso(TARGET).Position)*CFrame.new(0,-4.5,0)*CFrame.Angles(math.pi*0.5,0,0)
@@ -3810,8 +3810,8 @@ rs.Heartbeat:connect(function()
     if Stabbing == true and KO(TARGET).Value == false then
         StopHoverAnim = true
         noclip = true
-        KnifeHit()
-        TargetKnife(TARGET)
+        BuyPitch()
+        TargetPitch(TARGET)
     else
         if Stabbing == true and KO(TARGET).Value == true then
             Summon()
@@ -3823,8 +3823,8 @@ rs.Heartbeat:connect(function()
     if KnifeKills == true and KO(TARGET).Value == false then
         StopHoverAnim = true
         noclip = true
-        KnifeHit()
-        TargetKnife(TARGET)
+        BuyPitch()
+        TargetPitch(TARGET)
     else
         if KnifeKills == true and KO(TARGET).Value == true then
             if Attacking(STAND).Value == true then
@@ -4007,8 +4007,8 @@ rs.Heartbeat:connect(function()
         local TARGET = GetNearest()
         if TARGET then
             if KO(TARGET).Value == false then
-                TargetKnife(TARGET)
-                KnifeHit()
+                TargetPitch(TARGET)
+                BuyPitch()
             end
         else
             follow = true
