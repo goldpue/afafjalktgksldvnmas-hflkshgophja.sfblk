@@ -292,30 +292,7 @@ function Hit()
             STAND.Character:FindFirstChild("[StopSign]"):Activate()
         else
             STAND.Backpack:FindFirstChild("[StopSign]").Parent = STAND.Character
-        end 
-        setfpscap(60)
-game:GetService('RunService'):BindToRenderStep("CCC", 0 , function()
-for _, v in pairs(game.Players.LocalPlayer.Character.Humanoid:GetPlayingAnimationTracks()) do
-v:Stop();
-end
-game.Players.LocalPlayer.Character.Humanoid.Sit = true
-game.Players.LocalPlayer.Character.RightUpperArm.CanCollide = false
-game.Players.LocalPlayer.Character.RightLowerArm.CanCollide = false
-game.Players.LocalPlayer.Character.RightHand.CanCollide = false
-game.Players.LocalPlayer.Character.LeftUpperArm.CanCollide = false
-game.Players.LocalPlayer.Character.LeftLowerArm.CanCollide = false
-game.Players.LocalPlayer.Character.LeftHand.CanCollide = false
-game.Players.LocalPlayer.Character.RightUpperLeg.CanCollide = false
-game.Players.LocalPlayer.Character.RightLowerLeg.CanCollide = false
-game.Players.LocalPlayer.Character.RightFoot.CanCollide = false
-game.Players.LocalPlayer.Character.LeftFoot.CanCollide = false
-game.Players.LocalPlayer.Character.LeftLowerLeg.CanCollide = false
-game.Players.LocalPlayer.Character.LeftFoot.CanCollide = false
-game.Players.LocalPlayer.Character.UpperTorso.CanCollide = false
-game.Players.LocalPlayer.Character.LowerTorso.CanCollide = false
-game.Players.LocalPlayer.Character.Head.CanCollide = false
-game.Players.LocalPlayer.Character.HumanoidRootPart.CanCollide = false
-end)  
+        end
     else
         if Attack == 'Light' then
             if STAND.Character:FindFirstChild('Combat') then
@@ -408,7 +385,7 @@ end
 
 function TargetKnife(TARGET)
     for _,v in ipairs(STAND.Character:WaitForChild("Humanoid"):GetPlayingAnimationTracks()) do v:Stop() end
-    if game.Workspace.Vehicles:FindFirstChild(TARGET.Name) then
+    if game.Workspace.Vehicles:FindFirstChild(TARGET.Name) then 
         getRoot(STAND).CFrame = CFrame.new(game.Workspace.Vehicles[TARGET.Name].Position)*CFrame.new(game.Workspace.Vehicles[TARGET.Name].Velocity*.4)*CFrame.new(0,0,0)
     else
         if resolve == true then
