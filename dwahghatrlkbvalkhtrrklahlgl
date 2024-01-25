@@ -288,7 +288,7 @@ end
 
 function Hit()
     if Attack == 'Heavy' then
-        STAND.Backpack["[StopSign]"].Parent = game.Players.LocalPlayer.Character
+        STAND.Backpack["[StopSign]"].Parent = STAND.Character
         wait(0.4)
         STAND.Character["[StopSign]"]:Activate()
         else
