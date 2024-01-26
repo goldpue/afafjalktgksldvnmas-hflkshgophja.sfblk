@@ -302,7 +302,7 @@ function Hit2()
     if Attack == 'Heavy' then
         if STAND.Character:FindFirstChild('[Pitchfork]') then
             STAND.Character:FindFirstChild('[Pitchfork]'):Activate()
-            wait(1)
+            wait(1.5)
         else
             STAND.Backpack:FindFirstChild('[Pitchfork]').Parent = STAND.Character
         end   
