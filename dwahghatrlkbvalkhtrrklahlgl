@@ -3288,6 +3288,7 @@ end)
 CreateTargetAbility(":Bring",function()
     if TARGET then
         Bring(TARGET)
+        Hit()
     end
 end)
 
@@ -3307,6 +3308,7 @@ CreateTargetAbility(":Knock",function()
     if TARGET then
         Stop()
         noclip = true
+        Hit()
         Knocked = true
     end
 end)
@@ -3315,6 +3317,7 @@ CreateTargetAbility(":Knock2",function()
     if TARGET then
         Stop()
         noclip = true
+        Hit()
         Knocked2 = true
     end
 end)
@@ -3353,6 +3356,7 @@ CreateTargetAbility(":Akill",function()
     if TARGET then
         Stop()
         noclip = true
+        Hit()
         Kills = true
     end
 end)
