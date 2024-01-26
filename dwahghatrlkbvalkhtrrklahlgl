@@ -1653,17 +1653,6 @@ Arg("Redeem!", function()
 end)
 
 
-Create("sign2!",function()
-    Stop()
-    noclip = true
-    stopsing()
-    follow = true
-    if Sounds == true then
-        play(8655611378,true,true) 
-    end
-end)
-
-
 Create("Knife!",function()
     Stop()
     noclip = true
@@ -2411,6 +2400,7 @@ end)
 Create('Sign!',function()
     Stop()
     BuySign()
+    Summon()
 end)
 
 Create('Dcash!',function()
