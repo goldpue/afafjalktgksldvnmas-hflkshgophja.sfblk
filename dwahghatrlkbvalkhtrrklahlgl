@@ -537,7 +537,7 @@ function Bring(Target)
     end
     until KO(TARGET).Value == true or bring == false
     repeat rs.Stepped:Wait()
-    getRoot(STAND).CFrame = getRoot(TARGET).CFrame*CFrame.new(0,300,0)
+    getRoot(STAND).CFrame = getRoot(TARGET).CFrame*CFrame.new(0,0,0)
     until Attacking(STAND).Value == false
     if Alt == false then
     repeat rs.Stepped:Wait()
@@ -546,7 +546,7 @@ function Bring(Target)
     wait(.2)
     game.ReplicatedStorage.MainEvent:FireServer("Grabbing")
     wait(.5)
-    getRoot(STAND).CFrame = OWNER.Character:FindFirstChild('HumanoidRootPart').CFrame*CFrame.new(0,5,0)
+    getRoot(STAND).CFrame = OWNER.Character:FindFirstChild('HumanoidRootPart').CFrame*CFrame.new(0,5,0,0)
     end
     until KO(TARGET).Value == false or bring == false
     end
