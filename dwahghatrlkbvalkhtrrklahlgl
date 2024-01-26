@@ -3349,7 +3349,7 @@ CreateTargetAbility(":Stomp",function()
         StompTarget = true
     end
 end)
-CreateTargetAbility(":akill",function()
+CreateTargetAbility(":Akill",function()
     if TARGET then
         Stop()
         noclip = true
@@ -3802,20 +3802,25 @@ rs.Heartbeat:connect(function()
         StopHoverAnim = true
         noclip = true
         Hit2(true)
-        TargetPitch(TARGET)
+        TargetMalee(TARGET)
     else
         if PitchKills == true and KO(TARGET).Value == true then
-            if Attacking(STAND).Value == true then
-                getRoot(STAND).CFrame = getRoot(TARGET).CFrame*CFrame.new(0,300,0)
-            else
-                getRoot(STAND).CFrame = CFrame.new(getTorso(TARGET).Position)*CFrame.new(0,3,0)
-                game.ReplicatedStorage.MainEvent:FireServer("Stomp")
-                if Dead(TARGET).Value == true then
-                    getRoot(STAND).CFrame = CFrame.new(getRoot(TARGET).Position)*CFrame.new(0,300,0)
+            if Alt == false then
+                if Attacking(STAND).Value == true then
+                    getRoot(STAND).CFrame = getRoot(TARGET).CFrame*CFrame.new(0,300,0)
+                else
+                    getRoot(STAND).CFrame = CFrame.new(getTorso(TARGET).Position)*CFrame.new(0,5,0)
+                    game.ReplicatedStorage.MainEvent:FireServer("Stomp")
+                    if Dead(TARGET).Value == true then
+                        game.Players.LocalPlayer.Character:FindFirstChild('HumanoidRootPart').CFrame = CFrame.new(0, -495, 0)
+                        wait(2.6)
+                        Hit2(true)
+                    end
                 end
+            else
+                game.Players.LocalPlayer.Character:FindFirstChild('HumanoidRootPart').CFrame = CFrame.new(0, -495, 0)
             end
         end
-        Summon()
     end
 end)
 
