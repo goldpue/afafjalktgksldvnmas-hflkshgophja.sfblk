@@ -1194,13 +1194,13 @@ function BuyPitch()
 end
 
 function BuySign()
-    Stop()
     noclip = true
     repeat Wait()
         getRoot(STAND).CFrame = game.Workspace.Ignored.Shop['[StopSign] - $318'].Head.CFrame*CFrame.new(0,-5,0)
         fireclickdetector(game.Workspace.Ignored.Shop['[StopSign] - $318'].ClickDetector)
-        wait(0.5)
+        wait(1)
     until STAND.Backpack:FindFirstChild("[StopSign]")
+    wauit(.1)
     STAND.Backpack:FindFirstChild('[StopSign]').Parent = STAND.Character
     STAND.Backpack:WaitForChild("[StopSign]")
     STAND.Backpack["[StopSign]"].GripPos = Vector3.new(-15,0,0)
