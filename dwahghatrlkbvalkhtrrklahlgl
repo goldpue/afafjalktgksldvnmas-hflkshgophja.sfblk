@@ -527,22 +527,50 @@ function Bring(Target)
     Stop()
     bring = true
     noclip = true
-    if KO(TARGET).Value == false then
-    game.Workspace.Camera.CameraSubject = getHumanoid(STAND)
-    repeat rs.Stepped:Wait()
-    if KO(TARGET).Value == false then
-    Hit(true)
-    TargetMalee(Target)
-    game.Workspace.Camera.CameraSubject = getRoot(TARGET)
+    q = getRoot(TARGET)
+    w = TARGET.Character:FindFirstChild('Head')
+    e = getHumanoid(TARGET)
+    t = getRoot(STAND)
+    for _,v in ipairs(STAND.Character:WaitForChild("Humanoid"):GetPlayingAnimationTracks()) do v:Stop() end
+    if game.Workspace.Vehicles:FindFirstChild(TARGET.Name) then
+        t.CFrame = CFrame.new(game.Workspace.Vehicles[TARGET.Name].Position)*CFrame.new(game.Workspace.Vehicles[TARGET.Name].Velocity*.4)*CFrame.new(0,0,0)
+    else
+        if resolve == true then
+            if AttackMode == "Under" then
+                if STAND.Character:FindFirstChild("BodyEffects"):FindFirstChild("Movement"):FindFirstChild("ReduceWalk") then
+                    t.CFrame = CFrame.new(q.Position + Vector3.new(0,UnderP,0) + (e.MoveDirection*Prediction*e.WalkSpeed))*CFrame.Angles(math.pi*0.5,0,0)
+                else
+                    t.CFrame = q.CFrame*CFrame.new(0,500,0)
+                end
+            else
+                if AttackMode == "Sky" then
+                    if STAND.Character:FindFirstChild("BodyEffects"):FindFirstChild("Movement"):FindFirstChild("ReduceWalk") then
+                        t.CFrame = CFrame.new(q.Position + Vector3.new(0,SkyP,0) + (e.MoveDirection*Prediction*e.WalkSpeed))
+                    else
+                        t.CFrame = q.CFrame*CFrame.new(0,500,0)
+                    end
+                end		
+            end
+        else
+            if AttackMode == "Under" then
+                if STAND.Character:FindFirstChild("BodyEffects"):FindFirstChild("Movement"):FindFirstChild("ReduceWalk") then
+                    t.CFrame = CFrame.new(q.Position.X+(w.Velocity.X*Prediction),q.Position.Y+(w.Velocity.Y*0),q.Position.Z+(w.Velocity.Z*Prediction))*CFrame.new(0,UnderP,0)*CFrame.Angles(math.pi*0.5,0,0)
+                else
+                    t.CFrame = q.CFrame*CFrame.new(0,500,0)
+                end
+            else
+                if AttackMode == "Sky" then
+                    if STAND.Character:FindFirstChild("BodyEffects"):FindFirstChild("Movement"):FindFirstChild("ReduceWalk") then
+                        t.CFrame = CFrame.new(q.Position.X+(w.Velocity.X*Prediction),q.Position.Y+(w.Velocity.Y*0),q.Position.Z+(w.Velocity.Z*Prediction))*CFrame.new(0,0,0)
+                    else
+                        t.CFrame = q.CFrame*CFrame.new(0,500,0)
+                    end
+                end		
+            end
+        end
+        game.Workspace.Camera.CameraSubject = getHumanoid(TARGET)
     end
-    until KO(TARGET).Value == true or bring == false
-    repeat rs.Stepped:Wait()
-    getRoot(STAND).CFrame = getRoot(TARGET).CFrame*CFrame.new(0,5,0,0)
-    until Attacking(STAND).Value == false
-    if Alt == false then
-    repeat rs.Stepped:Wait()
-    if KO(TARGET).Value == true then
-        getRoot(STAND).CFrame = CFrame.new(getRoot(TARGET).Position + Vector3.new(0,UnderP,0) + (getHumanoid(TARGET).MoveDirection*Prediction*getHumanoid(TARGET).WalkSpeed))*CFrame.Angles(math.pi*0.5,0,0)
+end
     wait(.2)
     game.ReplicatedStorage.MainEvent:FireServer("Grabbing")
     wait(.5)
