@@ -361,7 +361,7 @@ function TargetMalee(TARGET)
                 if STAND.Character:FindFirstChild("BodyEffects"):FindFirstChild("Movement"):FindFirstChild("ReduceWalk") then
                     t.CFrame = CFrame.new(q.Position.X+(w.Velocity.X*Prediction),q.Position.Y+(w.Velocity.Y*0),q.Position.Z+(w.Velocity.Z*Prediction))*CFrame.new(0,UnderP,0)*CFrame.Angles(math.pi*0.5,0,0)
                 else
-                    t.CFrame = q.CFrame*CFrame.new(0,500,0)
+                    t.CFrame = q.CFrame*CFrame.new(0,-500,0)
                 end
             else
                 if AttackMode == "Sky" then
