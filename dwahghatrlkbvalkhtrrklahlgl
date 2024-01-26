@@ -386,8 +386,11 @@ function TargetPitch(TARGET)
             getRoot(STAND).CFrame = CFrame.new(getRoot(TARGET).Position + Vector3.new(0,UnderP,0) + (getHumanoid(TARGET).MoveDirection*Prediction*getHumanoid(TARGET).WalkSpeed))*CFrame.Angles(math.pi*0.5,0,0)
         else
             getRoot(STAND).CFrame = CFrame.new(getRoot(TARGET).Position.X+(getRoot(TARGET).Velocity.X*Prediction),getRoot(TARGET).Position.Y+(getRoot(TARGET).Velocity.Y*0),getRoot(TARGET).Position.Z+(getRoot(TARGET).Velocity.Z*Prediction))*CFrame.new(0,UnderP,0)*CFrame.Angles(math.pi*0.5,0,0)
+        else
+            getRoot(STAND).CFrame = q.CFrame*CFrame.new(0,-500,0)
         end
-    end	
+    end
+    game.Workspace.Camera.CameraSubject = getHumanoid(TARGET)	
 end
 
 function bug3(Target)
