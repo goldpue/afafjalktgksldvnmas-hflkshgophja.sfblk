@@ -221,6 +221,7 @@ function Stop()
     vanish = false
     antis3 = false
     bring = false
+    bring2 = false
     reset2 = false
     Knocked = false
     Kills = false
@@ -565,6 +566,50 @@ function Bring(Target)
     Summon()
     end
     end
+
+    function Bring2(Target)
+        Stop()
+        bring = true
+        noclip = true
+        if KO(TARGET).Value == false then
+        game.Workspace.Camera.CameraSubject = getHumanoid(STAND)
+        repeat rs.Stepped:Wait()
+        if KO(TARGET).Value == false then
+        Hit2(true)
+        TargetMalee(Target)
+        game.Workspace.Camera.CameraSubject = getRoot(TARGET)
+        end
+        until KO(TARGET).Value == true or bring == false
+        repeat rs.Stepped:Wait()
+        getRoot(STAND).CFrame = getRoot(TARGET).CFrame*CFrame.new(0,300,0)
+        until Attacking(STAND).Value == false
+        if Alt == false then
+        repeat rs.Stepped:Wait()
+        if KO(TARGET).Value == true then
+        getRoot(STAND).CFrame = CFrame.new(getTorso(TARGET).Position)*CFrame.new(0,5,0)
+        wait(.2)
+        game.ReplicatedStorage.MainEvent:FireServer("Grabbing")
+        wait(.5)
+        getRoot(STAND).CFrame = OWNER.Character:FindFirstChild('HumanoidRootPart').CFrame*CFrame.new(0,5,0)
+        end
+        until KO(TARGET).Value == false or bring == false
+        end
+        Summon()
+        else
+        if Alt == false then
+        repeat rs.Stepped:Wait()
+        if KO(TARGET).Value == true then
+        getRoot(STAND).CFrame = CFrame.new(getTorso(TARGET).Position)*CFrame.new(0,5,0)
+        wait(.2)
+        game.ReplicatedStorage.MainEvent:FireServer("Grabbing")
+        wait(.5)
+        getRoot(STAND).CFrame = getRoot(OWNER).CFrame*CFrame.new(0,5,0)
+        end
+        until KO(TARGET).Value == false or bring == false
+        end
+        Summon()
+        end
+        end
 
 function GetNearest()
     local ClosestPlayer
@@ -3289,6 +3334,13 @@ CreateTargetAbility(":Bring",function()
     if TARGET then
         Bring(TARGET)
         Hit()
+    end
+end)
+
+CreateTargetAbility(":Sbring",function()
+    if TARGET then
+        Bring2(TARGET)
+        Hit2()
     end
 end)
 
