@@ -3802,7 +3802,7 @@ rs.Heartbeat:connect(function()
         StopHoverAnim = true
         noclip = true
         Hit2(true)
-        TargetMalee(TARGET)
+        TargetPitch(TARGET)
     else
         if PitchKills == true and KO(TARGET).Value == true then
             if Alt == false then
