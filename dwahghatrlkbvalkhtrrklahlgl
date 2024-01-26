@@ -282,10 +282,10 @@ end
 
 function Hit()
     if Attack == 'Heavy' then
-        if STAND.Character:FindFirstChild('[Bat]') then
-            STAND.Character:FindFirstChild('[Bat]'):Activate()
+        if STAND.Character:FindFirstChild('[StopSign]') then
+            STAND.Character:FindFirstChild('[StopSign]'):Activate()
         else
-            STAND.Backpack:FindFirstChild('[Bat]').Parent = STAND.Character
+            STAND.Backpack:FindFirstChild('[StopSign]').Parent = STAND.Character
         end   
     else
         if Attack == 'Light' then
@@ -1193,13 +1193,13 @@ function BuyPitch()
     STAND.Backpack:FindFirstChild('[Pitchfork]').Parent = STAND.Character
 end
 
-function BuyBat()
+function BuySign()
     noclip = true
     repeat Wait()
-        getRoot(STAND).CFrame = game.Workspace.Ignored.Shop['[Bat] - $292'].Head.CFrame*CFrame.new(0,-5,0)
-        fireclickdetector(game.Workspace.Ignored.Shop['[Bat] - $292'].ClickDetector)
-    until STAND.Backpack:FindFirstChild("[Bat]")
-    STAND.Backpack:FindFirstChild('[Bat]').Parent = STAND.Character
+        getRoot(STAND).CFrame = game.Workspace.Ignored.Shop['[StopSign] - $318'].Head.CFrame*CFrame.new(0,-5,0)
+        fireclickdetector(game.Workspace.Ignored.Shop['[StopSign] - $318'].ClickDetector)
+    until STAND.Backpack:FindFirstChild("[StopSign]")
+    STAND.Backpack:FindFirstChild('[StopSign]').Parent = STAND.Character
 end
 
 function BuyWeight()
@@ -2408,9 +2408,9 @@ Create('Pitch!',function()
     BuyPitch()
 end)
 
-Create('Bat!',function()
+Create('Sign!',function()
     Stop()
-    BuyBat()
+    BuySign()
 end)
 
 Create('Dcash!',function()
