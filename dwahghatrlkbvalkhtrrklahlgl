@@ -302,7 +302,6 @@ function Hit2()
     if Attack == 'Heavy' then
         if STAND.Character:FindFirstChild('[Pitchfork]') then
             STAND.Character:FindFirstChild('[Pitchfork]'):Activate()
-            wait(1.5)
         else
             STAND.Backpack:FindFirstChild('[Pitchfork]').Parent = STAND.Character
         end   
@@ -3637,7 +3636,8 @@ Create("Attack2!",function()
         play(8655611378,true,true) 
     end	
     noclip = true
-    Pitchnear = true
+    killnear = true
+    Hit2()
 end)
 
 Create("Unattack!",function()
