@@ -3902,6 +3902,7 @@ end)
 rs.Heartbeat:connect(function()
     if SMITE == true and game:GetService('Players'):FindFirstChild(TARGET.Name) then
         StopHoverAnim = true
+        noclip = true
         getRoot(STAND).CFrame = CFrame.new(getRoot(TARGET).Position + Vector3.new(0,0,0) + (getHumanoid(TARGET).MoveDirection*0.80*getHumanoid(TARGET).WalkSpeed))
         local vel = getRoot(STAND).Velocity
         getRoot(STAND).Velocity = Vector3.new(9e9,9e9,9e9) 
