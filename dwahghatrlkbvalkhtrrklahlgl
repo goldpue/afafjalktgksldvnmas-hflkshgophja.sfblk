@@ -2211,10 +2211,6 @@ Create("Unwallet!",function()
     getHumanoid(STAND):UnequipTools()
 end)
 
-Create("Remove!",function()
-    getHumanoid(STAND):UnequipTools()
-end)
-
 Create("acash!",function()
     Chat("AutoDrop Enabled!")
     autodrop = true
