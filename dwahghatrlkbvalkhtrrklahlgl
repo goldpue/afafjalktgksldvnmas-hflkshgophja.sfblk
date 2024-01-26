@@ -1200,11 +1200,9 @@ function BuySign()
         fireclickdetector(game.Workspace.Ignored.Shop['[StopSign] - $318'].ClickDetector)
         wait(1)
     until STAND.Backpack:FindFirstChild("[StopSign]")
-    wauit(.1)
     STAND.Backpack:FindFirstChild('[StopSign]').Parent = STAND.Character
     STAND.Backpack:WaitForChild("[StopSign]")
-    STAND.Backpack["[StopSign]"].GripPos = Vector3.new(-15,0,0)
-    wait(.1)
+    STAND.Backpack["[StopSign]"].GripPos = Vector3.new(-15,15,0)
 end
 
 function BuyWeight()
