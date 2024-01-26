@@ -546,7 +546,7 @@ function Bring(Target)
     wait(.2)
     game.ReplicatedStorage.MainEvent:FireServer("Grabbing")
     wait(.5)
-    getRoot(STAND).CFrame = OWNER.Character:FindFirstChild('HumanoidRootPart').CFrame*CFrame.new(0,5,0)
+    getRoot(STAND).CFrame = OWNER.Character:FindFirstChild('HumanoidRootPart').CFrame*CFrame.Angles(math.pi*0.5,0,0)
     end
     until KO(TARGET).Value == false or bring == false
     end
