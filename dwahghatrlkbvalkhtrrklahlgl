@@ -1201,8 +1201,6 @@ function BuySign()
     until STAND.Backpack:FindFirstChild("[StopSign]")
     STAND.Backpack:FindFirstChild('[StopSign]').Parent = STAND.Character
 end
-    STAND.Character["[StopSign]"].Parent = STAND.Backpack
-end
 
 function BuyWeight()
     HeavyWeights = 0
