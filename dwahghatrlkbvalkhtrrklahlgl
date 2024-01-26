@@ -377,14 +377,14 @@ function TargetMalee(TARGET)
     end
 end
 
-function TargetPitch(TARGET2)
-    q = getRoot(TARGET2)
-    w = TARGET2.Character:FindFirstChild('Head')
-    e = getHumanoid(TARGET2)
+function TargetPitch(TARGET)
+    q = getRoot(TARGET)
+    w = TARGET.Character:FindFirstChild('Head')
+    e = getHumanoid(TARGET)
     t = getRoot(STAND)
     for _,v in ipairs(STAND.Character:WaitForChild("Humanoid"):GetPlayingAnimationTracks()) do v:Stop() end
-    if game.Workspace.Vehicles:FindFirstChild(TARGET2.Name) then
-        t.CFrame = CFrame.new(game.Workspace.Vehicles[TARGET2.Name].Position)*CFrame.new(game.Workspace.Vehicles[TARGET2.Name].Velocity*.4)*CFrame.new(0,0,0)
+    if game.Workspace.Vehicles:FindFirstChild(TARGET.Name) then
+        t.CFrame = CFrame.new(game.Workspace.Vehicles[TARGET.Name].Position)*CFrame.new(game.Workspace.Vehicles[TARGET.Name].Velocity*.4)*CFrame.new(0,0,0)
     else
         if resolve == true then
             if AttackMode == "Under" then
@@ -413,15 +413,16 @@ function TargetPitch(TARGET2)
                 if AttackMode == "Sky" then
                     if STAND.Character:FindFirstChild("BodyEffects"):FindFirstChild("Movement"):FindFirstChild("ReduceWalk") then
                         t.CFrame = CFrame.new(q.Position.X+(w.Velocity.X*Prediction),q.Position.Y+(w.Velocity.Y*0),q.Position.Z+(w.Velocity.Z*Prediction))*CFrame.new(0,0,0)
-                    else    
+                    else
                         t.CFrame = q.CFrame*CFrame.new(0,500,0)
                     end
                 end		
             end
         end
-        game.Workspace.Camera.CameraSubject = getHumanoid(TARGET2)
+        game.Workspace.Camera.CameraSubject = getHumanoid(TARGET)
     end
 end
+
 
 function bug3(Target)
     Stop()
@@ -3347,7 +3348,7 @@ CreateTargetAbility(":Bring",function()
 end)
 
 CreateTargetAbility(":Sbring",function()
-    if TARGET2 then
+    if TARGET then
         Bring2(TARGET)
         Hit2()
     end
@@ -3413,7 +3414,7 @@ CreateTargetAbility(":Stomp",function()
         StompTarget = true
     end
 end)
-CreateTargetAbility(":Kill",function()
+CreateTargetAbility(":Akill",function()
     if TARGET then
         Stop()
         noclip = true
@@ -3423,7 +3424,7 @@ CreateTargetAbility(":Kill",function()
 end)
 
 CreateTargetAbility(":Stab",function()
-    if TARGET2 then
+    if TARGET then
         Stop()
         noclip = true
         Hit2()
@@ -3432,7 +3433,7 @@ CreateTargetAbility(":Stab",function()
 end)
 
 CreateTargetAbility(":Astab",function()
-    if TARGET2 then
+    if TARGET then
         Stop()
         noclip = true
         Hit2()
@@ -3441,7 +3442,7 @@ CreateTargetAbility(":Astab",function()
 end)
 
 CreateTargetAbility(":Kannoy",function()
-    if TARGET2 then
+    if TARGET then
         Stop()
         noclip = true
         Hit2()
@@ -3813,6 +3814,7 @@ rs.Heartbeat:connect(function()
             if STAND.Character:FindFirstChild('[Pitchfork]') then STAND.Character:FindFirstChild('[Pitchfork]'):Activate() STAND.Character:FindFirstChild('[Pitchfork]'):Deactivate() else STAND.Backpack:FindFirstChild('[Pitchfork]').Parent = STAND.Character end
         end
     end
+    game.Workspace.Camera.CameraSubject = getHumanoid(TARGET)
 end)
 
 
@@ -3841,6 +3843,7 @@ rs.Heartbeat:connect(function()
             Summon()
         end
     end
+    game.Workspace.Camera.CameraSubject = getHumanoid(TARGET)
 end)
 
 rs.Heartbeat:connect(function()
@@ -3868,6 +3871,7 @@ rs.Heartbeat:connect(function()
             end
         end
     end
+    game.Workspace.Camera.CameraSubject = getHumanoid(TARGET)
 end)
 
 rs.Heartbeat:connect(function()
@@ -4047,6 +4051,7 @@ rs.Heartbeat:connect(function()
             StopHoverAnim = false
         end
     end
+    game.Workspace.Camera.CameraSubject = getHumanoid(TARGET)
 end)
 
 rs.heartbeat:connect(function()
