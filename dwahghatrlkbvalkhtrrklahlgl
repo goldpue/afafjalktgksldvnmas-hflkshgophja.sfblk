@@ -542,7 +542,7 @@ function Bring(Target)
     if Alt == false then
     repeat rs.Stepped:Wait()
     if KO(TARGET).Value == true then
-            getRoot(STAND).CFrame = CFrame.new(getRoot(TARGET).Position + Vector3.new(0,UnderP,0) + (getHumanoid(TARGET).MoveDirection*Prediction*getHumanoid(TARGET).WalkSpeed))*CFrame.Angles(math.pi*0.5,0,0)
+    getRoot(STAND).CFrame = CFrame.new(getTorso(TARGET).Position)*CFrame.new(0,5,0,0)
     wait(.2)
     game.ReplicatedStorage.MainEvent:FireServer("Grabbing")
     wait(.5)
@@ -567,7 +567,7 @@ function Bring(Target)
     end
     end
 
-    function Bring2(Target)
+    function bring2(Target)
         Stop()
         bring2 = true
         noclip = true
