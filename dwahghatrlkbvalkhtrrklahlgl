@@ -2204,7 +2204,7 @@ Create("Wallet!",function()
     end
 end)
 
-Create("Unwallet!",function()
+Create("Reequip!",function()
     if Sounds == true then
         play(8655611378,true,true) 
     end
