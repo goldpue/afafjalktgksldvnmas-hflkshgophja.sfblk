@@ -288,10 +288,9 @@ function Hit()
         wait(0.5)
         fireclickdetector(workspace.Ignored.Shop["[StopSign] - $318"].ClickDetector)
         end
-            STAND.Character:FindFirstChild('[StopSign]') then
-            STAND.Character:FindFirstChild('[StopSign]'):Activate()
-        else
-            STAND.Backpack:FindFirstChild('[StopSign]').Parent = STAND.Character
+        game.Players.LocalPlayer.Backpack["[StopSign]"].Parent = game.Players.LocalPlayer.Character
+        wait(0.4)
+        game.Players.LocalPlayer.Character["[StopSign]"]:Activate()
         end   
     else
         if Attack == 'Light' then
