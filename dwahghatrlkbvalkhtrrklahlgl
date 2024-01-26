@@ -542,7 +542,7 @@ function Bring(Target)
     if Alt == false then
     repeat rs.Stepped:Wait()
     if KO(TARGET).Value == true then
-    getRoot(STAND).CFrame = CFrame.new(getTorso(TARGET).Position)*CFrame.new(0,5,0)
+    getRoot(STAND).CFrame = CFrame.new(getTorso(TARGET).Position)*CFrame.Angles(-55,0,0)
     wait(.2)
     game.ReplicatedStorage.MainEvent:FireServer("Grabbing")
     wait(.5)
@@ -2204,7 +2204,7 @@ Create("Wallet!",function()
     end
 end)
 
-Create("Reequip!",function()
+Create("Reeuip!",function()
     if Sounds == true then
         play(8655611378,true,true) 
     end
