@@ -1198,7 +1198,6 @@ function BuySign()
     repeat Wait()
         getRoot(STAND).CFrame = game.Workspace.Ignored.Shop['[StopSign] - $318'].Head.CFrame*CFrame.new(0,-5,0)
         fireclickdetector(game.Workspace.Ignored.Shop['[StopSign] - $318'].ClickDetector)
-        wait(1)
     until STAND.Backpack:FindFirstChild("[StopSign]")
     STAND.Backpack:FindFirstChild('[StopSign]').Parent = STAND.Character
 end
