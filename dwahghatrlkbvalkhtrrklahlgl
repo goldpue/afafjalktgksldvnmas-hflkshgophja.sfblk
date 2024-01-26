@@ -1201,8 +1201,6 @@ function BuySign()
         wait(1)
     until STAND.Backpack:FindFirstChild("[StopSign]")
     STAND.Backpack:FindFirstChild('[StopSign]').Parent = STAND.Character
-    STAND.Backpack:WaitForChild("[StopSign]")
-    STAND.Backpack["[StopSign]"].GripPos = Vector3.new(-15,15,0)
 end
 
 function BuyWeight()
