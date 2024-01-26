@@ -8,7 +8,7 @@ getgenv().Settings = {
     ['CrewID'] = 32570691, --Must Be In Group For It To Work
     ['Attack'] = 'Heavy', --Heavy = Super Punch Light = Spam Punch [Heavy | Light]
     ['StandMode'] = 'Heaven', --[Star Platinum : OverHeaven | Star Platinum: The World | Star Platinum, Za Warudo! | TheWorld | Cmoon | King Crimson | Killer Queen | MIH | D4C]
-    ['FlyMode'] = 'Heaven', --[Glide | Fly | Hover | Heaven]| gogo]
+    ['FlyMode'] = 'Hover', --[Glide | Fly | Hover | Heaven]| gogo]
     ['Prediction'] = 0.12595, --Prediction For Attack Or Targetting
     ['GunPrediction'] = 0.3, --Prediction For Gun Kill
     ['AttackMode'] = 'Under', --[Sky | Under] If [Sky] The Stand Will Attack Infront Of Then And If [Under] The Stand Will Attack In Underground
@@ -3635,25 +3635,6 @@ Create("Unattack!",function()
     if Sounds == true then
         play(8655611378,true,true) 
     end
-    noclip = true
-    follow = true
-end)
-
-Create("Stab2!",function()
-    Stop()
-    Hit2()
-    if Sounds == true then
-        play(8655611378,true,true) 
-    end
-    noclip = true
-    Pitchenar = true
-end)
-
-Create("Unstab!",function()
-    Stop()
-    if Sounds == true then
-        play(8655611378,true,true) 
-    end	
     noclip = true
     follow = true
 end)
