@@ -1200,8 +1200,7 @@ function BuySign()
         fireclickdetector(game.Workspace.Ignored.Shop['[StopSign] - $318'].ClickDetector)
     until STAND.Backpack:FindFirstChild("[StopSign]")
     STAND.Backpack:FindFirstChild('[StopSign]').Parent = STAND.Character
-    getHumanoid(STAND):UnequipTools()
-
+Summon()
 end
 
 function BuyWeight()
