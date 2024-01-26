@@ -378,49 +378,17 @@ function TargetMalee(TARGET)
 end
 
 function TargetPitch(TARGET)
-    q = getRoot(TARGET)
-    w = TARGET.Character:FindFirstChild('Head')
-    e = getHumanoid(TARGET)
-    t = getRoot(STAND)
     for _,v in ipairs(STAND.Character:WaitForChild("Humanoid"):GetPlayingAnimationTracks()) do v:Stop() end
     if game.Workspace.Vehicles:FindFirstChild(TARGET.Name) then
-        t.CFrame = CFrame.new(game.Workspace.Vehicles[TARGET.Name].Position)*CFrame.new(game.Workspace.Vehicles[TARGET.Name].Velocity*.4)*CFrame.new(0,0,0)
+        getRoot(STAND).CFrame = CFrame.new(game.Workspace.Vehicles[TARGET.Name].Position)*CFrame.new(game.Workspace.Vehicles[TARGET.Name].Velocity*.4)*CFrame.new(0,0,0)
     else
         if resolve == true then
-            if AttackMode == "Under" then
-                if STAND.Character:FindFirstChild("BodyEffects"):FindFirstChild("Movement"):FindFirstChild("ReduceWalk") then
-                    t.CFrame = CFrame.new(q.Position + Vector3.new(0,UnderP,0) + (e.MoveDirection*Prediction*e.WalkSpeed))*CFrame.Angles(math.pi*0.5,0,0)
-                else
-                    t.CFrame = q.CFrame*CFrame.new(0,500,0)
-                end
-            else
-                if AttackMode == "Sky" then
-                    if STAND.Character:FindFirstChild("BodyEffects"):FindFirstChild("Movement"):FindFirstChild("ReduceWalk") then
-                        t.CFrame = CFrame.new(q.Position + Vector3.new(0,SkyP,0) + (e.MoveDirection*Prediction*e.WalkSpeed))
-                    else
-                        t.CFrame = q.CFrame*CFrame.new(0,500,0)
-                    end
-                end		
-            end
+            getRoot(STAND).CFrame = CFrame.new(getRoot(TARGET).Position + Vector3.new(0,UnderP,0) + (getHumanoid(TARGET).MoveDirection*Prediction*getHumanoid(TARGET).WalkSpeed))*CFrame.Angles(math.pi*0.5,0,0)
         else
-            if AttackMode == "Under" then
-                if STAND.Character:FindFirstChild("BodyEffects"):FindFirstChild("Movement"):FindFirstChild("ReduceWalk") then
-                    t.CFrame = CFrame.new(q.Position.X+(w.Velocity.X*Prediction),q.Position.Y+(w.Velocity.Y*0),q.Position.Z+(w.Velocity.Z*Prediction))*CFrame.new(0,UnderP,0)*CFrame.Angles(math.pi*0.5,0,0)
-                else
-                    t.CFrame = q.CFrame*CFrame.new(0,-500,0)
-                end
-            else
-                if AttackMode == "Sky" then
-                    if STAND.Character:FindFirstChild("BodyEffects"):FindFirstChild("Movement"):FindFirstChild("ReduceWalk") then
-                        t.CFrame = CFrame.new(q.Position.X+(w.Velocity.X*Prediction),q.Position.Y+(w.Velocity.Y*0),q.Position.Z+(w.Velocity.Z*Prediction))*CFrame.new(0,0,0)
-                    else
-                        t.CFrame = q.CFrame*CFrame.new(0,500,0)
-                    end
-                end		
-            end
+            getRoot(STAND).CFrame = CFrame.new(getRoot(TARGET).Position.X+(getRoot(TARGET).Velocity.X*Prediction),getRoot(TARGET).Position.Y+(getRoot(TARGET).Velocity.Y*0),getRoot(TARGET).Position.Z+(getRoot(TARGET).Velocity.Z*Prediction))*CFrame.new(0,UnderP,0)*CFrame.Angles(math.pi*0.5,0,0)
         end
-        game.Workspace.Camera.CameraSubject = getHumanoid(TARGET)
-    end
+    end	
+    game.Workspace.Camera.CameraSubject = getRoot(TARGET)
 end
 
 
@@ -3814,7 +3782,6 @@ rs.Heartbeat:connect(function()
             if STAND.Character:FindFirstChild('[Pitchfork]') then STAND.Character:FindFirstChild('[Pitchfork]'):Activate() STAND.Character:FindFirstChild('[Pitchfork]'):Deactivate() else STAND.Backpack:FindFirstChild('[Pitchfork]').Parent = STAND.Character end
         end
     end
-    game.Workspace.Camera.CameraSubject = getHumanoid(TARGET)
 end)
 
 
@@ -3843,7 +3810,6 @@ rs.Heartbeat:connect(function()
             Summon()
         end
     end
-    game.Workspace.Camera.CameraSubject = getHumanoid(TARGET)
 end)
 
 rs.Heartbeat:connect(function()
@@ -3871,7 +3837,6 @@ rs.Heartbeat:connect(function()
             end
         end
     end
-    game.Workspace.Camera.CameraSubject = getHumanoid(TARGET)
 end)
 
 rs.Heartbeat:connect(function()
@@ -4051,7 +4016,6 @@ rs.Heartbeat:connect(function()
             StopHoverAnim = false
         end
     end
-    game.Workspace.Camera.CameraSubject = getHumanoid(TARGET)
 end)
 
 rs.heartbeat:connect(function()
