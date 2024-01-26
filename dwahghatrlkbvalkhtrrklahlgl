@@ -537,7 +537,7 @@ function Bring(Target)
     end
     until KO(TARGET).Value == true or bring == false
     repeat rs.Stepped:Wait()
-    getRoot(STAND).CFrame = getRoot(TARGET).CFrame*CFrame.Angles(math.pi*0.5,0,0)
+    getRoot(STAND).CFrame = getRoot(TARGET).CFrame*CFrame.new(0,5,0,0)
     until Attacking(STAND).Value == false
     if Alt == false then
     repeat rs.Stepped:Wait()
@@ -555,11 +555,11 @@ function Bring(Target)
     if Alt == false then
     repeat rs.Stepped:Wait()
     if KO(TARGET).Value == true then
-    getRoot(STAND).CFrame = CFrame.new(getTorso(TARGET).Position)*CFrame.Angles(math.pi*0.5,0,0)
+    getRoot(STAND).CFrame = CFrame.new(getTorso(TARGET).Position)*CFrame.new(0,5,0)
     wait(.2)
     game.ReplicatedStorage.MainEvent:FireServer("Grabbing")
     wait(.5)
-    getRoot(STAND).CFrame = getRoot(OWNER).CFrame*CFrame.Angles(math.pi*0.5,0,0)
+    getRoot(STAND).CFrame = getRoot(OWNER).CFrame*CFrame.new(0,5,0)
     end
     until KO(TARGET).Value == false or bring == false
     end
