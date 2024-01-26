@@ -3631,7 +3631,25 @@ Create("Attack!",function()
     killnear = true
 end)
 
+Create("Attack2!",function()
+    Stop()
+    if Sounds == true then
+        play(8655611378,true,true) 
+    end	
+    noclip = true
+    Pitchnear = true
+end)
+
 Create("Unattack!",function()
+    Stop()
+    if Sounds == true then
+        play(8655611378,true,true) 
+    end
+    noclip = true
+    follow = true
+end)
+
+Create("Unattack2!",function()
     Stop()
     if Sounds == true then
         play(8655611378,true,true) 
