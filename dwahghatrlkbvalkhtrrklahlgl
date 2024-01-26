@@ -306,11 +306,16 @@ end
 
 function Hit2()
     if Attack == 'Heavy' then
-        if STAND.Character:FindFirstChild('[Pitchfork]') then
-            STAND.Character:FindFirstChild('[Pitchfork]'):Activate()
+        if game.Players.LocalPlayer.Backpack:FindFirstChild("[Pitchfork]") then
         else
-            STAND.Backpack:FindFirstChild('[Pitchfork]').Parent = STAND.Character
-        end   
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(248, 22, -29)
+        wait(0.5)
+        fireclickdetector(workspace.Ignored.Shop["[Pitchfork] - $339"].ClickDetector)
+        end
+        game.Players.LocalPlayer.Backpack["[Pitchfork]"].Parent = game.Players.LocalPlayer.Character
+        wait(0.4)
+        game.Players.LocalPlayer.Character["[Pitchfork]"]:Activate()
+        end
     else
         if Attack == 'Light' then
             if STAND.Character:FindFirstChild('[Knife]') then
